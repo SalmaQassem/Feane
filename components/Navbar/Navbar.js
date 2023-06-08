@@ -1,5 +1,5 @@
 import classes from "../../styles/_navbar.module.scss";
-import { StyledContainer } from "../UI/StyledContainer";
+import StyledContainer from "../UI/StyledContainer";
 import Link from "next/link";
 import { useCallback } from "react";
 import { useState, useEffect } from "react";

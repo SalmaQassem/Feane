@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-export const Button = styled(Link)`
+const Button = styled(Link)`
   display: inline-block;
   background-color: #ffbe33;
   color: #fff;
@@ -18,3 +18,4 @@ export const Button = styled(Link)`
     background-color: #e69c00;
   }
 `;
+export default Button;

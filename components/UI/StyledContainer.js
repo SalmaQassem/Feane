@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledContainer = styled.div`
+const StyledContainer = styled.div`
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -28,3 +28,4 @@ export const StyledContainer = styled.div`
     }
   }
 `;
+export default StyledContainer;
