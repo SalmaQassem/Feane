@@ -1,0 +1,8 @@
+@use "./pefix_mixin" as *;
+
+@mixin flex_row {
+    @include prefix((display: flex, justify-content: center, align-items: center), webkit moz ms o);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

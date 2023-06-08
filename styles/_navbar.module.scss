@@ -1,0 +1,115 @@
+@use "../styles/variables/colors" as *;
+@use "../helpers/pefix_mixin" as *;
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+
+$padding: 0.3125rem;
+
+.navbar {
+    width: 100%;
+    padding: 15px 0;
+    position: relative;
+
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        @include prefix((display: flex, flex-wrap: wrap, justify-content: space-between), webkit moz ms o);
+
+        @include mediaQuery($largeScreen_min_width) {
+            & {
+                flex-wrap: nowrap;
+                justify-content: start;
+                @include prefix((flex-wrap: nowrap, justify-content: start), webkit moz ms o);
+            }
+        }
+
+        .logo {
+            padding-top: $padding;
+            padding-bottom: $padding;
+            margin-right: 1rem;
+            font-family: "DancingScript-Bold", cursive;
+            font-size: 32px;
+            color: #fff;
+            text-decoration: none;
+            text-transform: capitalize;
+            line-height: inherit;
+            white-space: nowrap;
+        }
+
+        .toggler {
+            display: block;
+            cursor: pointer;
+            transition: 0.3s;
+            @include prefix((transition: 0.3s), webkit moz ms o);
+
+            @include mediaQuery($largeScreen_min_width) {
+                & {
+                    display: none;
+                }
+            }
+
+            span {
+                width: 35px;
+                height: 4px;
+                display: block;
+                background-color: #fff;
+                border-radius: 5px;
+                transition: 0.3s;
+                @include prefix((transition: 0.3s), webkit moz ms o);
+
+                &:not(:last-of-type) {
+                    margin-bottom: 6px;
+                }
+            }
+
+            &.open {
+                transform: rotate(360deg);
+                @include prefix((transform: rotate(360deg)), webkit moz ms o);
+
+                span {
+                    &:first-of-type {
+                        transform: rotate(45deg);
+                        @include prefix((transform: rotate(45deg)), webkit moz ms o);
+                    }
+
+                    &:nth-of-type(2) {
+                        transform: rotate(135deg);
+                        position: absolute;
+                        top: 0;
+                        @include prefix((transform: rotate(135deg)), webkit moz ms o);
+                    }
+
+                    &:last-of-type {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .collapse {
+            width: 100%;
+            height: 0;
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: height 0.35s ease;
+            @include prefix((height: fit-content, display: flex), webkit moz ms o);
+
+            &.opened {
+                height: 246px;
+                transition: height 0.35s ease;
+            }
+
+            @include mediaQuery($largeScreen_min_width) {
+                & {
+                    height: fit-content;
+                    flex-direction: row;
+                    overflow: initial;
+                }
+            }
+        }
+    }
+}

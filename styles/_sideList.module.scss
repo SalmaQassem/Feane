@@ -1,0 +1,71 @@
+@use "../helpers/flex_row_mixin" as *;
+@use "./global_placeholders" as *;
+@use "../styles/variables/colors" as *;
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+
+%margin {
+    margin: 0 10px;
+}
+
+%position {
+    position: relative;
+}
+
+.user {
+    margin-top: 15px;
+    @include flex_row;
+
+    @include mediaQuery($largeScreen_min_width) {
+        & {
+            margin-top: 0
+        }
+    }
+
+    .sideList {
+        @include flex_row;
+
+        li {
+            >a {
+                @extend %margin;
+                @extend %anchor;
+
+                &:hover {
+                    @extend %color;
+                }
+            }
+
+            &.cart {
+                @extend %position;
+
+                &::before {
+                    content: attr(data-before);
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    color: $MainColor;
+                    top: -8px;
+                    right: -2px;
+                }
+
+                /*>span {
+                    @extend %margin;
+                    @extend %anchor;
+
+                    &:hover {
+                        @extend %color;
+                    }
+                }*/
+            }
+
+            &.profile {
+                @extend %position;
+            }
+        }
+    }
+
+    >a {
+        padding: 8px 30px;
+        @extend %margin;
+    }
+}

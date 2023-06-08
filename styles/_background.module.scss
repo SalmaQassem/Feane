@@ -1,0 +1,51 @@
+@use "../helpers/pefix_mixin" as *;
+
+%shared-background {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    @include prefix((display: flex, flex-direction: column), webkit moz ms o);
+}
+
+%shared-Image-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+%shared-Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include prefix((object-fit: cover), webkit moz ms o);
+}
+
+.background {
+    min-height: 100vh;
+    @extend %shared-background;
+
+    .image {
+        @extend %shared-Image-container;
+
+        img {
+            @extend %shared-Image;
+        }
+    }
+}
+
+.sub {
+    min-height: auto;
+    @extend %shared-background;
+
+    .image {
+        @extend %shared-Image-container;
+
+        img {
+            @extend %shared-Image;
+            object-position: right top;
+            @include prefix((object-position: right top), webkit moz ms o);
+        }
+    }
+}
