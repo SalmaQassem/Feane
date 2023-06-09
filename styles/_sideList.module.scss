@@ -5,7 +5,7 @@
 @use "../helpers/mediaQuery_mixin" as *;
 
 %margin {
-    margin: 0 10px;
+    margin: 0 0.4rem;
 }
 
 %position {
@@ -13,7 +13,7 @@
 }
 
 .user {
-    margin-top: 15px;
+    margin-top: 2vh;
     @include flex_row;
 
     @include mediaQuery($largeScreen_min_width) {
@@ -29,6 +29,13 @@
             >a {
                 @extend %margin;
                 @extend %anchor;
+
+                @include mediaQuery($XlargeScreen_min_width) {
+                    & {
+                        font-size: 1.1vw;
+                        margin: 0 0.55vw;
+                    }
+                }
 
                 &:hover {
                     @extend %color;
@@ -57,7 +64,6 @@
     }
 
     >a {
-        padding: 8px 30px;
-        @extend %margin;
+        margin: 0 0.7vw;
     }
 }

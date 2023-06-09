@@ -6,7 +6,7 @@ import Button from "./UI/Button";
 const responsive = {
   desktop: {
     breakpoint: {
-      max: 3000,
+      max: 5000,
       min: 1024,
     },
     items: 1,

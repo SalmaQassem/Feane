@@ -3,7 +3,7 @@
 @use "../helpers/mediaQuery_mixin" as *;
 
 .landing {
-    padding: 45px 0 75px 0;
+    padding: 7vh 0 11vh;
     flex: 1;
     display: flex;
     align-items: center;
@@ -12,7 +12,7 @@
         width: 100%;
         text-align: start;
         color: #fff;
-        margin-bottom: 230px;
+        margin-bottom: 24vh;
 
         @include mediaQuery($smallScreen_min_width) {
             & {
@@ -23,7 +23,7 @@
         @include mediaQuery($largeScreen_min_width) {
             & {
                 max-width: 50%;
-                margin-bottom: 185px;
+
             }
         }
 
@@ -39,16 +39,34 @@
                     font-size: 3.5rem;
                 }
             }
+
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    font-size: 3.6vw;
+                }
+            }
         }
 
         p {
             margin-bottom: 1rem;
-            font-size: 14px;
+            font-size: 0.9rem;
+
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    margin-bottom: 2.5vh;
+                    font-size: 0.9vw;
+                }
+            }
         }
 
         .button {
-            padding: 10px 45px;
-            margin-top: 10px;
+            margin-top: 1%;
+
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    padding: 1.3vh 2.9vw;
+                }
+            }
         }
     }
 
@@ -57,18 +75,31 @@
         justify-content: start !important;
 
         .dot {
-            width: 12px;
-            height: 12px;
-            margin: 10px 3px;
+            width: 0.8rem;
+            height: 0.8rem;
+            margin: 0.4rem 0.2rem;
             border-radius: 50%;
             border: none;
             background-color: #fff;
             cursor: pointer;
 
             &.active {
-                width: 20px;
-                height: 20px;
+                width: 1.4rem;
+                height: 1.4rem;
                 background-color: $MainColor;
+            }
+
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    width: 0.8vw;
+                    height: 0.8vw;
+                    margin: 1vh 0.2vw;
+                }
+
+                &.active {
+                    width: 1.4vw;
+                    height: 1.4vw;
+                }
             }
         }
     }
