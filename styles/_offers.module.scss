@@ -1,0 +1,172 @@
+@use "../helpers/mediaQuery_mixin" as *;
+@use "../styles/variables/mediaQuery" as *;
+@use "./variables/colors" as *;
+
+%flex_align_center {
+    display: flex;
+    align-items: center;
+}
+
+.offers {
+    padding: 6vh 0 0 0;
+    background-color: #fff;
+
+    .offersItems {
+        width: 100%;
+        @extend %flex_align_center;
+        flex-wrap: wrap;
+        gap: 1.875rem;
+
+        @include mediaQuery($smallScreen_min_width) {
+            & {
+                flex-wrap: nowrap;
+            }
+        }
+
+        .item {
+            width: 100%;
+            @extend %flex_align_center;
+            justify-content: start;
+            margin-top: 6vh;
+            padding: 3vh 2.5vh;
+            border-radius: 5px;
+            background-color: $NavyColor;
+
+            &:not(:first-of-type) {
+                margin-top: 0;
+            }
+
+            @include mediaQuery($mobile_max_width) {
+                & {
+                    flex-direction: column;
+                    justify-content: center;
+                }
+            }
+
+            @include mediaQuery($smallScreen_min_width) {
+                & {
+                    max-width: 50%;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    &:not(:first-of-type) {
+                        margin-top: 6vh;
+                    }
+                }
+            }
+
+            @include mediaQuery($largeScreen_min_width) {
+                & {
+                    flex-direction: row;
+                    justify-content: start;
+                }
+            }
+
+            .imageContainer {
+                max-width: 175px;
+                max-height: 175px;
+                margin-right: 0;
+                margin-bottom: 2.5vh;
+                border-radius: 50%;
+                border: 5px solid $MainColor;
+                overflow: hidden;
+                object-fit: cover;
+
+
+                @include mediaQuery($XlargeScreen_min_width) {
+                    & {
+                        max-width: 11.5vw;
+                        max-height: 11.5vw;
+                        border-width: 0.35vw;
+                    }
+                }
+
+                @include mediaQuery($largeScreen_min_width) {
+                    & {
+                        margin-right: 2.5vh;
+                        margin-bottom: 0;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    transition: 0.2s;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            .description {
+                text-align: center;
+                color: #fff;
+
+                @include mediaQuery($largeScreen_min_width) {
+                    & {
+
+                        text-align: start;
+                    }
+                }
+
+                .h2 {
+                    font-family: "DancingScript-Regular", cursive;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                    line-height: 1.2;
+
+                    @include mediaQuery($XlargeScreen_min_width) {
+                        & {
+                            font-size: 1.6vw;
+                        }
+                    }
+                }
+
+                .h3 {
+                    margin: 2.3vh 0;
+                    font-family: "DancingScript-Bold", cursive;
+                    text-transform: capitalize;
+
+                    .percentage {
+                        font-size: 2.5rem;
+
+                        .off {
+                            font-size: 15px;
+                        }
+
+                        @include mediaQuery($XlargeScreen_min_width) {
+
+                            & {
+                                font-size: 2.5vw;
+
+                                & {
+                                    .off {
+                                        font-size: 1.2vw;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .button {
+
+                    .icon {
+                        margin-left: 5px;
+                        vertical-align: middle;
+
+                        @include mediaQuery($XlargeScreen_min_width) {
+
+                            & {
+                                margin-left: 0.5vw;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
