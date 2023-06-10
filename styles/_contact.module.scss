@@ -1,0 +1,23 @@
+@use "./variables/colors" as *;
+
+.box {
+    display: flex;
+    flex-direction: column;
+
+    & {
+        >a {
+            display: block;
+            color: #fff;
+            margin: 5px 0;
+
+            &:hover {
+                color: $MainColor;
+            }
+
+            .icon {
+                font-size: 14px;
+                margin-right: 8px;
+            }
+        }
+    }
+}

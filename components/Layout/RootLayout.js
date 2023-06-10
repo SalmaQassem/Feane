@@ -1,24 +1,21 @@
 import Background from "../UI/Background";
 import NavBar from "../Navbar/Navbar";
-import Landing from "../Landing";
 import Footer from "../Footer/Footer";
 
-const HomeLayout = (props) => {
+const RootLayout = (props) => {
   return (
     <>
       {/*<CartProvider>*/}
-      <Background>
+      <Background class="sub">
         {/*<ProfileProvider>*/}
         <NavBar />
         {/*</ProfileProvider>*/}
-        {/*<Cart />*/}
-        <Landing />
       </Background>
+      {/*<Cart />*/}
       {/*</CartProvider>*/}
       {props.children}
       <Footer />
     </>
   );
 };
-
-export default HomeLayout;
+export default RootLayout;

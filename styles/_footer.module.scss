@@ -1,0 +1,39 @@
+@use "./variables/colors" as *;
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+
+.footer {
+  padding: 75px 0 40px 0;
+  background-color: $NavyColor;
+  color: #fff;
+  text-align: center;
+
+  .box {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+
+    .item {
+      width: 100%;
+      padding: 0 15px;
+      margin-bottom: 30px;
+
+      @include mediaQuery($smallScreen_min_width) {
+        & {
+          max-width: calc(100% / 3);
+          flex: 0 0 calc(100% / 3);
+        }
+      }
+    }
+  }
+
+  .info {
+    margin-top: 25px;
+
+    p {
+      &:first-of-type {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}

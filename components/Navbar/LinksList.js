@@ -3,22 +3,22 @@ import classes from "../../styles/_links-list.module.scss";
 
 const navLinks = [
   {
-    link: "",
+    url: "/",
     title: "home",
     label: "Home Page",
   },
   {
-    link: "",
+    url: "Menu",
     title: "menu",
     label: "Menu Page",
   },
   {
-    link: "",
+    url: "About",
     title: "about",
     label: "About Page",
   },
   {
-    link: "",
+    url: "BookTable",
     title: "book table",
     label: "Book Table Page",
   },
@@ -35,7 +35,7 @@ const LinkList = (props) => {
           return (
             <li key={link.label}>
               <Link
-                href={link.link}
+                href={link.url}
                 aria-label={link.label}
                 onClick={linkClickHandler}
               >

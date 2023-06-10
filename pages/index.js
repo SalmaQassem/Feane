@@ -1,13 +1,9 @@
-import Background from "../components/UI/Background";
-import NavBar from "../components/Navbar/Navbar";
-import Landing from "../components/Landing";
-function HomePage() {
+const HomePage = (props) => {
   return (
-    <Background>
-      <NavBar />
-      <Landing />
-    </Background>
+    <>
+      <main>{props.children}</main>
+    </>
   );
-}
+};
 
 export default HomePage;

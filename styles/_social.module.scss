@@ -1,0 +1,38 @@
+@use "../helpers/flex_row_mixin" as *;
+@use "./variables/colors" as *;
+
+%links {
+    @include flex_row;
+}
+
+.social {
+    text-align: center;
+
+    .header {
+        display: block;
+        color: #fff;
+        font-size: 38px !important;
+        line-height: 1;
+    }
+
+    .links {
+        margin: 20px 0 10px 0;
+        @extend %links;
+        gap: 5px;
+        cursor: pointer;
+
+        a {
+            width: 30px;
+            height: 30px;
+            @extend %links;
+            font-size: 18px;
+            border-radius: 50%;
+            background-color: #fff;
+            color: $NavyColor;
+
+            &:hover {
+                color: $MainColor;
+            }
+        }
+    }
+}
