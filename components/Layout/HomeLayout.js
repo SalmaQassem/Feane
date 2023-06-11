@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 
 const HomeLayout = (props) => {
   return (
-    <>
+    <div>
       {/*<CartProvider>*/}
       <Background>
         {/*<ProfileProvider>*/}
@@ -17,7 +17,7 @@ const HomeLayout = (props) => {
       {/*</CartProvider>*/}
       {props.children}
       <Footer />
-    </>
+    </div>
   );
 };
 

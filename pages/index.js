@@ -1,24 +1,25 @@
-import Offers from "@/components/Offers";
+import Offers from "../components/Offers";
+import Menu from "./Menu";
 import { MongoClient } from "mongodb";
 
 const HomePage = (props) => {
   return (
-    <>
-      <main>
-        {props.children}
-        <Offers data={props.data} />
-      </main>
-    </>
+    <main>
+      <Offers data={props.data} />
+      <Menu data={props.menu} />
+    </main>
   );
 };
 
 export async function getStaticProps() {
   const client = await MongoClient.connect(
-    "mongodb+srv://SalmaQassem:Salma499@cluster0.xeioklz.mongodb.net/OffersData?retryWrites=true&w=majority"
+    "mongodb+srv://SalmaQassem:Salma499@cluster0.xeioklz.mongodb.net/FeaneDatabase?retryWrites=true&w=majority"
   );
   const db = client.db();
   const offersCollections = db.collection("offers");
   const offers = await offersCollections.find().toArray();
+  const menuCollection = db.collection("Menu");
+  const menuItems = await menuCollection.find().toArray();
   client.close();
 
   return {
@@ -27,6 +28,14 @@ export async function getStaticProps() {
         id: item._id.toString(),
         percentage: item.percentage,
         title: item.title,
+        imageUrl: item.imageUrl,
+      })),
+      menu: menuItems.map((item) => ({
+        id: item._id.toString(),
+        category: item.category,
+        name: item.name,
+        description: item.description,
+        price: item.price,
         imageUrl: item.imageUrl,
       })),
     },
