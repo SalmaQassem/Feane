@@ -8,7 +8,7 @@ const Background = (props) => {
       className={props.class === "sub" ? classes.sub : classes.background}
     >
       <div className={classes.image}>
-        <Image src={background} priority={true} alt="background"></Image>
+        <Image src={background} priority={true} alt="background" />
       </div>
       {props.children}
     </section>

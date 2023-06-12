@@ -1,5 +1,6 @@
 import Offers from "../components/Offers";
 import Menu from "./Menu";
+import About from "./About";
 import { MongoClient } from "mongodb";
 
 const HomePage = (props) => {
@@ -7,6 +8,7 @@ const HomePage = (props) => {
     <main>
       <Offers data={props.data} />
       <Menu data={props.menu} />
+      <About />
     </main>
   );
 };
