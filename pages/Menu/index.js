@@ -36,7 +36,6 @@ export async function getStaticProps() {
   const db = client.db();
   const menuCollection = db.collection("Menu");
   const menu = await menuCollection.find().toArray();
-  console.log(menu);
   client.close();
 
   return {

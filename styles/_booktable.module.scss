@@ -1,0 +1,227 @@
+@use "../styles/variables/dimensions" as *;
+@use "../helpers/flex_row_mixin" as *;
+@use "../styles/variables/colors" as *;
+@use "../styles/variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+@use "../helpers/flex_row_mixin" as *;
+
+%spin {
+    appearance: none;
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+%datetime-fields {
+    background-color: initial;
+}
+
+%filter {
+    filter: invert(100%) brightness(50%) sepia(100%) saturate(10000%);
+    -webkit-filter: invert(100%) brightness(50%) sepia(100%) saturate(10000%);
+}
+
+.book {
+    padding: $SectionPadding;
+
+    .box {
+        display: block;
+
+        &.hide {
+            display: none;
+        }
+
+        .confirm {
+            width: 360px;
+            padding: 30px 25px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 12;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 1px 10px -1px #333;
+
+            .icon {
+                width: 55px;
+                height: 55px;
+                margin: 0 auto 10px;
+                @include flex_row;
+                color: $MainColor;
+                font-size: 36px;
+                border-radius: 50%;
+                border: 2px solid $MainColor;
+            }
+
+            .h3 {
+                margin-bottom: 10px;
+                text-transform: capitalize;
+                font-size: 25px;
+            }
+
+            .p {
+                margin-bottom: 15px;
+            }
+
+            .button {
+                padding: 7px 50px;
+            }
+        }
+    }
+
+    .header {
+        margin-bottom: 25px;
+        text-align: left;
+    }
+
+    .formContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+
+        @include mediaQuery($smallScreen_min_width) {
+            & {
+                flex-direction: row;
+                gap: 30px;
+            }
+        }
+
+        .form {
+            flex: 1;
+            text-align: start;
+
+            .inputContainer {
+                position: relative;
+
+                .input {
+                    width: 100%;
+                    height: 50px;
+                    padding: 6px 12px 6px 25px;
+                    margin-bottom: 25px;
+                    font-family: "OpenSans-Regular", sans-serif;
+                    font-size: 16px;
+                    color: #000;
+                    border: 1px solid #999;
+                    outline: none;
+                    border-radius: 5px;
+
+                    &::-webkit-input-placeholder {
+                        color: #222222;
+                        text-transform: capitalize;
+                    }
+
+                    &::-moz-placeholder {
+                        color: #222222;
+                        text-transform: capitalize;
+                    }
+
+                    &::-ms-input-placeholder {
+                        color: #222222;
+                        text-transform: capitalize;
+                    }
+
+                    &::-ms-input-placeholder {
+                        color: #222222;
+                        text-transform: capitalize;
+                    }
+
+                    &::placeholder {
+                        color: #222222;
+                        text-transform: capitalize;
+                    }
+
+                    &[type="number"]::-webkit-outer-spin-button {
+                        @extend %spin;
+                    }
+
+                    &[type="number"]::-webkit-inner-spin-button {
+                        @extend %spin;
+                    }
+
+                    &[type="date"]::-webkit-calendar-picker-indicator {
+                        cursor: pointer;
+                    }
+
+                    &[type="date"].invalid::-webkit-calendar-picker-indicator {
+                        @extend %filter;
+                    }
+
+                    &[type="date"].invalid::-webkit-datetime-edit {
+                        @extend %filter;
+                    }
+
+                    &[type="date"].invalid::-webkit-datetime-edit-year-field {
+                        @extend %datetime-fields;
+                    }
+
+                    &[type="date"].invalid::-webkit-datetime-edit-month-field {
+                        @extend %datetime-fields;
+                    }
+
+                    &[type="date"].invalid::-webkit-datetime-edit-day-field {
+                        @extend %datetime-fields;
+                    }
+
+                    &.invalid {
+                        color: red;
+                        border-color: red;
+
+                        &::-webkit-input-placeholder {
+                            color: red;
+                        }
+
+                        &::-moz-placeholder {
+                            color: red;
+                        }
+
+                        &::-ms-input-placeholder {
+                            color: red;
+                        }
+
+                        &::-ms-input-placeholder {
+                            color: red;
+                        }
+
+                        &::placeholder {
+                            color: red;
+                        }
+
+                        +.alert {
+                            @include flex_row;
+                        }
+                    }
+                }
+
+                .alert {
+                    width: 18px;
+                    height: 18px;
+                    position: absolute;
+                    top: 25px;
+                    right: 12px;
+                    transform: translateY(-50%);
+                    display: none;
+                    border-radius: 50%;
+                    color: red;
+                    font-size: 13px;
+                    font-weight: bold;
+                    border: 2px solid red;
+                }
+
+                .feedback {
+                    color: red;
+                    font-size: 15px;
+                    transform: translateY(-20px);
+                }
+            }
+
+        }
+    }
+
+    .map {
+        flex: 1;
+        position: relative;
+        z-index: 1;
+    }
+
+}
