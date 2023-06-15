@@ -1,4 +1,5 @@
 import classes from "../../styles/_menu.module.scss";
+import Head from "next/head";
 import StyledContainer from "@/components/UI/StyledContainer";
 import Header from "../../components/UI/Header";
 import MenuFilters from "../../components/MenuFilters";
@@ -14,18 +15,27 @@ const Menu = (props) => {
   }, []);
 
   return (
-    <section className={classes.menu}>
-      <StyledContainer>
-        <div className="heading">
-          <Header>our menu</Header>
-        </div>
-        <MenuFilters onFilter={onFilterHandler} />
-        <MenuItems category={activeCategory} menuItems={props.data} />
-        <Button href="/Menu" className={classes.viewBtn}>
-          view more
-        </Button>
-      </StyledContainer>
-    </section>
+    <>
+      <Head>
+        <title>Feane</title>
+        <meta
+          name="description"
+          content="Food Ordering Web site created using next js"
+        />
+      </Head>
+      <section className={classes.menu}>
+        <StyledContainer>
+          <div className="heading">
+            <Header>our menu</Header>
+          </div>
+          <MenuFilters onFilter={onFilterHandler} />
+          <MenuItems category={activeCategory} menuItems={props.data} />
+          <Button href="/Menu" className={classes.viewBtn}>
+            view more
+          </Button>
+        </StyledContainer>
+      </section>
+    </>
   );
 };
 

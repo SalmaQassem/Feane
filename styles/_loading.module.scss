@@ -1,0 +1,51 @@
+@use "./variables/colors" as *;
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+
+.loading {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: #f6f6f6;
+    color: $MainColor;
+
+    .ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        li {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: #fff;
+            font-size: 25px;
+            transition: 0.1s ease;
+
+            &.active {
+                transform: scale(1.4);
+            }
+
+            @include mediaQuery($Tablet_min_width) {
+                & {
+                    width: 60px;
+                    height: 60px;
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+
+    .text {
+        font-size: 26px;
+        font-weight: bold;
+    }
+}

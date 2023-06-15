@@ -1,4 +1,5 @@
 import classes from "../../styles/_booktable.module.scss";
+import Head from "next/head";
 import StyledContainer from "../../components/UI/StyledContainer";
 import Overlay from "../../components/UI/Overlay";
 import Header from "../../components/UI/Header";
@@ -126,154 +127,163 @@ const BookTable = () => {
     setIsConfirm(true);
   };
   return (
-    <section className={classes.book}>
-      <StyledContainer>
-        {isSubmitted && (
-          <div
-            className={
-              !isConfirm ? `${classes.box}` : `${classes.box} ${classes.hide}`
-            }
-          >
-            <Overlay />
-            <div className={classes.confirm}>
-              <div className={classes.icon}>
-                <FiCheck />
+    <>
+      <Head>
+        <title>Feane</title>
+        <meta
+          name="description"
+          content="Food Ordering Web site created using next js"
+        />
+      </Head>
+      <section className={classes.book}>
+        <StyledContainer>
+          {isSubmitted && (
+            <div
+              className={
+                !isConfirm ? `${classes.box}` : `${classes.box} ${classes.hide}`
+              }
+            >
+              <Overlay />
+              <div className={classes.confirm}>
+                <div className={classes.icon}>
+                  <FiCheck />
+                </div>
+                <h3 className={classes.h3}>success</h3>
+                <p className={classes.p}>
+                  Your booking has been confirmed.
+                  <br />
+                  Check your emails for details.
+                </p>
+                <BookButton className={classes.button} onClick={confirmHandler}>
+                  ok
+                </BookButton>
               </div>
-              <h3 className={classes.h3}>success</h3>
-              <p className={classes.p}>
-                Your booking has been confirmed.
-                <br />
-                Check your emails for details.
-              </p>
-              <BookButton className={classes.button} onClick={confirmHandler}>
-                ok
-              </BookButton>
             </div>
+          )}
+          <div className={classes.header}>
+            <Header>book a table</Header>
           </div>
-        )}
-        <div className={classes.header}>
-          <Header>book a table</Header>
-        </div>
-        <div className={classes.formContainer}>
-          <form
-            id="book_form"
-            className={classes.form}
-            onSubmit={formSubmitHandler}
-          >
-            <div className={classes.inputContainer}>
-              <input
-                className={
-                  !isNameValid && isNameTouched
-                    ? `${classes.input} ${classes.invalid}`
-                    : classes.input
-                }
-                id="name-id"
-                type="text"
-                placeholder="your name"
-                name="name"
-                value={nameValue}
-                onChange={changeNameHandler}
-                onBlur={blurNameHandler}
-              />
-              <div className={classes.alert}>
-                <span>!</span>
+          <div className={classes.formContainer}>
+            <form
+              id="book_form"
+              className={classes.form}
+              onSubmit={formSubmitHandler}
+            >
+              <div className={classes.inputContainer}>
+                <input
+                  className={
+                    !isNameValid && isNameTouched
+                      ? `${classes.input} ${classes.invalid}`
+                      : classes.input
+                  }
+                  id="name-id"
+                  type="text"
+                  placeholder="your name"
+                  name="name"
+                  value={nameValue}
+                  onChange={changeNameHandler}
+                  onBlur={blurNameHandler}
+                />
+                <div className={classes.alert}>
+                  <span>!</span>
+                </div>
+                {!isNameValid && isNameTouched && (
+                  <p className={classes.feedback}>Name must not be empty</p>
+                )}
               </div>
-              {!isNameValid && isNameTouched && (
-                <p className={classes.feedback}>Name must not be empty</p>
-              )}
-            </div>
-            <div className={classes.inputContainer}>
-              <input
-                className={
-                  !isPhoneValid && isPhoneTouched
-                    ? `${classes.input} ${classes.invalid}`
-                    : classes.input
-                }
-                id="number-id"
-                type="number"
-                placeholder="phone number"
-                name="phone"
-                value={phoneValue}
-                onChange={changePhoneHandler}
-                onBlur={blurPhoneHandler}
-              />
-              <div className={classes.alert}>
-                <span>!</span>
+              <div className={classes.inputContainer}>
+                <input
+                  className={
+                    !isPhoneValid && isPhoneTouched
+                      ? `${classes.input} ${classes.invalid}`
+                      : classes.input
+                  }
+                  id="number-id"
+                  type="number"
+                  placeholder="phone number"
+                  name="phone"
+                  value={phoneValue}
+                  onChange={changePhoneHandler}
+                  onBlur={blurPhoneHandler}
+                />
+                <div className={classes.alert}>
+                  <span>!</span>
+                </div>
+                {!isPhoneValid && isPhoneTouched && (
+                  <p className={classes.feedback}>
+                    Phone number must be 15 numbers
+                  </p>
+                )}
               </div>
-              {!isPhoneValid && isPhoneTouched && (
+              <div className={classes.inputContainer}>
+                <input
+                  className={
+                    !isEmailValid && isEmailTouched
+                      ? `${classes.input} ${classes.invalid}`
+                      : classes.input
+                  }
+                  id="email-id"
+                  type="email"
+                  placeholder="your email"
+                  name="email"
+                  value={emailValue}
+                  onChange={changeEmailHandler}
+                  onBlur={blurEmailHandler}
+                />
+                <div className={classes.alert}>
+                  <span>!</span>
+                </div>
+                {!isEmailValid && isEmailTouched && (
+                  <p className={classes.feedback}>Email is not valid</p>
+                )}
+              </div>
+              <div className={classes.inputContainer}>
+                <SelectorInput
+                  data={DUMMYSELECTOR}
+                  default="How many persons?"
+                  changeSelector={changeSelectorHandler}
+                  isSelectorOpened={isOpened}
+                  isValid={isSelectorValid}
+                  isTouched={isSelectorTouched}
+                  onOpen={onOpenHandler}
+                  selector={selectorValue}
+                />
+              </div>
+              {!isOpened && !isSelectorValid && isSelectorTouched && (
                 <p className={classes.feedback}>
-                  Phone number must be 15 numbers
+                  Number of persons must be selected
                 </p>
               )}
-            </div>
-            <div className={classes.inputContainer}>
-              <input
-                className={
-                  !isEmailValid && isEmailTouched
-                    ? `${classes.input} ${classes.invalid}`
-                    : classes.input
-                }
-                id="email-id"
-                type="email"
-                placeholder="your email"
-                name="email"
-                value={emailValue}
-                onChange={changeEmailHandler}
-                onBlur={blurEmailHandler}
-              />
-              <div className={classes.alert}>
-                <span>!</span>
+              <div className={classes.inputContainer}>
+                <input
+                  className={
+                    !isDateValid && isDateTouched
+                      ? `${classes.input} ${classes.invalid}`
+                      : classes.input
+                  }
+                  aria-label="date"
+                  type="date"
+                  name="date"
+                  value={dateValue}
+                  onChange={changeDateHandler}
+                  onBlur={blurDateHandler}
+                  onKeyDown={(e) => {
+                    e.preventDefault();
+                  }}
+                />
+                {!isDateValid && isDateTouched && (
+                  <p className={classes.feedback}>Date must be selected</p>
+                )}
               </div>
-              {!isEmailValid && isEmailTouched && (
-                <p className={classes.feedback}>Email is not valid</p>
-              )}
+              <BookButton aria-label="book">book now</BookButton>
+            </form>
+            <div className={classes.map}>
+              <Map />
             </div>
-            <div className={classes.inputContainer}>
-              <SelectorInput
-                data={DUMMYSELECTOR}
-                default="How many persons?"
-                changeSelector={changeSelectorHandler}
-                isSelectorOpened={isOpened}
-                isValid={isSelectorValid}
-                isTouched={isSelectorTouched}
-                onOpen={onOpenHandler}
-                selector={selectorValue}
-              />
-            </div>
-            {!isOpened && !isSelectorValid && isSelectorTouched && (
-              <p className={classes.feedback}>
-                Number of persons must be selected
-              </p>
-            )}
-            <div className={classes.inputContainer}>
-              <input
-                className={
-                  !isDateValid && isDateTouched
-                    ? `${classes.input} ${classes.invalid}`
-                    : classes.input
-                }
-                aria-label="date"
-                type="date"
-                name="date"
-                value={dateValue}
-                onChange={changeDateHandler}
-                onBlur={blurDateHandler}
-                onKeyDown={(e) => {
-                  e.preventDefault();
-                }}
-              />
-              {!isDateValid && isDateTouched && (
-                <p className={classes.feedback}>Date must be selected</p>
-              )}
-            </div>
-            <BookButton aria-label="book">book now</BookButton>
-          </form>
-          <div className={classes.map}>
-            <Map />
           </div>
-        </div>
-      </StyledContainer>
-    </section>
+        </StyledContainer>
+      </section>
+    </>
   );
 };
 
