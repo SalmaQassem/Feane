@@ -5,7 +5,7 @@
 @use "../helpers/mediaQuery_mixin" as *;
 
 %margin {
-    margin: 0 0.4rem;
+    margin: 0 0.6rem;
 }
 
 %position {
@@ -26,11 +26,19 @@
         @include flex_row;
 
         li {
+
             >a {
                 @extend %margin;
                 @extend %anchor;
+                font-size: 1rem;
 
                 @include mediaQuery($XlargeScreen_min_width) {
+                    & {
+                        font-size: 1.125rem;
+                    }
+                }
+
+                @include mediaQuery($XXlargeScreen_min_width) {
                     & {
                         font-size: 1.1vw;
                         margin: 0 0.55vw;
@@ -64,6 +72,18 @@
     }
 
     >a {
-        margin: 0 0.7vw;
+        margin: 0 0.8vw;
+
+        @include mediaQuery($XlargeScreen_min_width) {
+            & {
+                font-size: 1.125rem;
+            }
+        }
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                font-size: 1.1vw;
+            }
+        }
     }
 }

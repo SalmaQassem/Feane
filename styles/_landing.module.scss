@@ -12,9 +12,9 @@
         width: 100%;
         text-align: start;
         color: #fff;
-        margin-bottom: 24vh;
+        margin-bottom: 23vh;
 
-        @include mediaQuery($smallScreen_min_width) {
+        @include mediaQuery($medScreen_min_width) {
             & {
                 max-width: 58%;
             }
@@ -30,41 +30,49 @@
         h1 {
             margin-bottom: 15px;
             font-family: "DancingScript-Bold", cursive;
-            font-size: 3rem;
+            font-size: 3.5rem;
             line-height: 1.2;
             text-transform: capitalize;
 
-            @include mediaQuery($mobile_min_width) {
+            @include mediaQuery($XlargeScreen_min_width) {
                 & {
-                    font-size: 3.5rem;
+                    font-size: 3.9375rem;
                 }
             }
 
-            @include mediaQuery($XlargeScreen_min_width) {
+            @include mediaQuery($XXlargeScreen_min_width) {
                 & {
-                    font-size: 3.6vw;
+                    font-size: 3.85vw;
                 }
             }
         }
 
         p {
             margin-bottom: 1rem;
-            font-size: 0.9rem;
+            font-size: 0.875rem;
 
             @include mediaQuery($XlargeScreen_min_width) {
                 & {
                     margin-bottom: 2.5vh;
-                    font-size: 0.9vw;
+                    font-size: 0.984375rem;
+                }
+            }
+
+            @include mediaQuery($XXlargeScreen_min_width) {
+                & {
+                    font-size: 0.9625vw;
                 }
             }
         }
 
         .button {
-            margin-top: 1%;
+            margin-top: 2.5%;
+            padding: 0.6rem 2.8rem;
 
             @include mediaQuery($XlargeScreen_min_width) {
                 & {
-                    padding: 1.3vh 2.9vw;
+                    margin-top: 1.2vh;
+                    padding: 1.2vh 3.2vw;
                 }
             }
         }

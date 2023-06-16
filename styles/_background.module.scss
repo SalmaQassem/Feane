@@ -1,4 +1,6 @@
 @use "../helpers/pefix_mixin" as *;
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
 
 %shared-background {
     position: relative;
@@ -23,8 +25,14 @@
 }
 
 .background {
-    min-height: 100vh;
+    min-height: auto;
     @extend %shared-background;
+
+    @include mediaQuery($largeScreen_min_width) {
+        & {
+            min-height: 100vh;
+        }
+    }
 
     .image {
         @extend %shared-Image-container;

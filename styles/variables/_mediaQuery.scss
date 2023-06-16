@@ -3,12 +3,17 @@ $mobile_min_width: "min-width: 320px";
 $mobile_max_width: "max-width: 480px";
 //Ipad and Tablet
 $Tablet_min_width: "min-width: 481px";
-$Tablet_max_width: "max-width: 768px";
-//Small screens and laptops
-$smallScreen_min_width: "min-width: 769px";
-$smallScreen_max_width: "max-width: 1024px";
+$Tablet_max_width: "max-width: 575px";
+//Small screens
+$smallScreen_min_width: "min-width: 576px";
+$smallScreen_max_width: "max-width: 767px";
+//Medium screens
+$medScreen_min_width: "min-width: 768px";
+$medScreen_max_width: "max-width: 991px";
 //Desktops and large screens
-$largeScreen_min_width: "min-width: 1025px";
-$largeScreen_max_width: "max-width: 1200px";
+$largeScreen_min_width: "min-width: 992px";
+$largeScreen_max_width: "max-width: 1199px";
 //Extra large screens and TV
-$XlargeScreen_min_width: "min-width: 1201px";
+$XlargeScreen_min_width: "min-width: 1200px";
+//4k screens
+$XXlargeScreen_min_width: "min-width: 2000px";

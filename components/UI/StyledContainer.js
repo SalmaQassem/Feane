@@ -2,19 +2,34 @@ import styled from "styled-components";
 
 const StyledContainer = styled.div`
   width: 100%;
-  max-width: 93%;
-  padding: 0 4vw;
+  padding: 0 15px;
   margin-right: auto;
   margin-left: auto;
 
-  @media (min-width: 1025px) {
+  @media (min-width: 576px) {
     & {
-      padding: 0 3vw;
+      max-width: 540px;
     }
   }
-  @media (min-width: 1201px) {
+  @media (min-width: 768px) {
     & {
-      padding: 0 9vw;
+      max-width: 720px;
+    }
+  }
+  @media (min-width: 992px) {
+    & {
+      max-width: 960px;
+    }
+  }
+  @media (min-width: 1200px) {
+    & {
+      max-width: 1170px;
+    }
+  }
+  @media (min-width: 2000px) {
+    & {
+      max-width: 70vw;
+      padding: 0 0.8vw;
     }
   }
 `;

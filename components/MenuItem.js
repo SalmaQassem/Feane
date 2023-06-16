@@ -1,4 +1,5 @@
 import classes from "../styles/_menuItem.module.scss";
+import Image from "next/image";
 import AddButton from "./UI/AddButton";
 import { useCallback } from "react";
 //import { useDispatch } from "react-redux";
@@ -22,7 +23,7 @@ const MenuItem = (props) => {
         };
         //dispatch(cartActions.addItems(selectedItem));
       }
-    },
+    }
     //[props, dispatch]
   );
 
@@ -39,7 +40,14 @@ const MenuItem = (props) => {
       key={props.item.id}
     >
       <div className={classes.imageContainer}>
-        <img src={props.item.imageUrl} alt="menu_img" loading="lazy" />
+        <Image
+          src={props.item.imageUrl}
+          alt="menu_img"
+          width={0}
+          height={0}
+          sizes="100vw"
+          loading="lazy"
+        />
       </div>
       <div className={classes.description}>
         <h3 className={classes.h3}>{props.item.name}</h3>

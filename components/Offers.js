@@ -1,11 +1,10 @@
 import classes from "../styles/_offers.module.scss";
 import StyledContainer from "./UI/StyledContainer";
+import Image from "next/image";
 import Button from "./UI/Button";
 import { FaShoppingCart } from "react-icons/fa";
-//import { useSelector } from "react-redux";
 
 const Offers = (props) => {
-  //const offers = useSelector((state) => state.offers.items);
   return (
     <section className={classes.offers}>
       <StyledContainer>
@@ -14,7 +13,15 @@ const Offers = (props) => {
             return (
               <div className={classes.item} key={item.id}>
                 <div className={classes.imageContainer}>
-                  <img src={item.imageUrl} alt="offer" loading="lazy" />
+                  <Image
+                    className={classes.img}
+                    src={item.imageUrl}
+                    alt="offer"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    loading="lazy"
+                  />
                 </div>
                 <div className={classes.description}>
                   <h2 className={classes.h2}>{item.title}</h2>
