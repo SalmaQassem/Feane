@@ -17,18 +17,31 @@
         flex-wrap: wrap;
         gap: 1.875rem;
 
-        @include mediaQuery($smallScreen_min_width) {
+        @include mediaQuery($medScreen_min_width) {
             & {
                 flex-wrap: nowrap;
+            }
+        }
+
+        @include mediaQuery($XlargeScreen_min_width) {
+            & {
+                gap: 1.5vw;
+            }
+        }
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                gap: 2.5vw;
             }
         }
 
         .item {
             width: 100%;
             @extend %flex_align_center;
-            justify-content: start;
+            flex-direction: column;
+            justify-content: center;
             margin-top: 6vh;
-            padding: 3vh 2.5vh;
+            padding: 1.25rem 0.9375rem;
             border-radius: 5px;
             background-color: $NavyColor;
 
@@ -36,14 +49,14 @@
                 margin-top: 0;
             }
 
-            @include mediaQuery($mobile_max_width) {
+            @include mediaQuery($Tablet_min_width) {
                 & {
-                    flex-direction: column;
-                    justify-content: center;
+                    flex-direction: row;
+                    justify-content: start;
                 }
             }
 
-            @include mediaQuery($smallScreen_min_width) {
+            @include mediaQuery($medScreen_min_width) {
                 & {
                     max-width: 50%;
                     flex-direction: column;
@@ -62,31 +75,60 @@
                 }
             }
 
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    padding: 2.2vh 0.9vw;
+                    border-radius: 0.5vh;
+                }
+            }
+
+            @include mediaQuery($XXlargeScreen_min_width) {
+                & {
+                    padding: 2.8vh 1.4vw;
+
+                }
+            }
+
             .imageContainer {
-                max-width: 175px;
-                max-height: 175px;
+                width: 175px;
+                height: 175px;
                 margin-right: 0;
-                margin-bottom: 2.5vh;
+                margin-bottom: 0.9375rem;
                 border-radius: 50%;
                 border: 5px solid $MainColor;
                 overflow: hidden;
                 object-fit: cover;
 
-
-                @include mediaQuery($XlargeScreen_min_width) {
+                @include mediaQuery($Tablet_min_width) {
                     & {
-                        max-width: 11.5vw;
-                        max-height: 11.5vw;
-                        border-width: 0.35vw;
+                        margin-right: 0.9375rem;
+                        margin-bottom: 0;
+                    }
+                }
+
+                @include mediaQuery($medScreen_min_width) {
+                    & {
+                        margin-right: 0;
+                        margin-bottom: 0.9375rem;
                     }
                 }
 
                 @include mediaQuery($largeScreen_min_width) {
                     & {
-                        margin-right: 2.5vh;
+                        margin-right: 0.9375rem;
                         margin-bottom: 0;
                     }
                 }
+
+                @include mediaQuery($XXlargeScreen_min_width) {
+                    & {
+                        width: 11.5vw;
+                        height: 11.5vw;
+                        margin-right: 1.2vw;
+                        border-width: 0.35vw;
+                    }
+                }
+
 
                 .img {
                     width: 100%;
@@ -118,15 +160,27 @@
 
                     @include mediaQuery($XlargeScreen_min_width) {
                         & {
-                            font-size: 1.6vw;
+                            font-size: 1.7vw;
+                        }
+                    }
+
+                    @include mediaQuery($XXlargeScreen_min_width) {
+                        & {
+                            font-size: 2.25vw;
                         }
                     }
                 }
 
                 .h3 {
-                    margin: 2.3vh 0;
+                    margin: 0.625rem 0;
                     font-family: "DancingScript-Bold", cursive;
                     text-transform: capitalize;
+
+                    @include mediaQuery($XlargeScreen_min_width) {
+                        & {
+                            margin: 1vh 0;
+                        }
+                    }
 
                     .percentage {
                         font-size: 2.5rem;
@@ -138,11 +192,24 @@
                         @include mediaQuery($XlargeScreen_min_width) {
 
                             & {
-                                font-size: 2.5vw;
+                                font-size: 2.8vw;
 
                                 & {
                                     .off {
-                                        font-size: 1.2vw;
+                                        font-size: 1.12vw;
+                                    }
+                                }
+                            }
+                        }
+
+                        @include mediaQuery($XXlargeScreen_min_width) {
+
+                            & {
+                                font-size: 3.6vw;
+
+                                & {
+                                    .off {
+                                        font-size: 1.28vw;
                                     }
                                 }
                             }
