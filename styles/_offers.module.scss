@@ -8,8 +8,14 @@
 }
 
 .offers {
-    padding: 6vh 0 0 0;
+    padding: 45px 0 90px 0;
     background-color: #fff;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            padding: 5.4vh 0 10.8vh 0;
+        }
+    }
 
     .offersItems {
         width: 100%;
@@ -23,15 +29,9 @@
             }
         }
 
-        @include mediaQuery($XlargeScreen_min_width) {
-            & {
-                gap: 1.5vw;
-            }
-        }
-
         @include mediaQuery($XXlargeScreen_min_width) {
             & {
-                gap: 2.5vw;
+                gap: 2.1vw;
             }
         }
 
@@ -77,14 +77,14 @@
 
             @include mediaQuery($XlargeScreen_min_width) {
                 & {
-                    padding: 2.2vh 0.9vw;
+                    padding: 2.4vh 1.8vh;
                     border-radius: 0.5vh;
                 }
             }
 
             @include mediaQuery($XXlargeScreen_min_width) {
                 & {
-                    padding: 2.8vh 1.4vw;
+                    padding: 2.8vh 2.1vh;
 
                 }
             }
@@ -160,13 +160,13 @@
 
                     @include mediaQuery($XlargeScreen_min_width) {
                         & {
-                            font-size: 1.7vw;
+                            font-size: 1.68rem;
                         }
                     }
 
                     @include mediaQuery($XXlargeScreen_min_width) {
                         & {
-                            font-size: 2.25vw;
+                            font-size: 1.65vw;
                         }
                     }
                 }
@@ -186,17 +186,17 @@
                         font-size: 2.5rem;
 
                         .off {
-                            font-size: 15px;
+                            font-size: 16px;
                         }
 
                         @include mediaQuery($XlargeScreen_min_width) {
 
                             & {
-                                font-size: 2.8vw;
+                                font-size: 2.8rem;
 
                                 & {
                                     .off {
-                                        font-size: 1.12vw;
+                                        font-size: 1.12rem;
                                     }
                                 }
                             }
@@ -205,11 +205,11 @@
                         @include mediaQuery($XXlargeScreen_min_width) {
 
                             & {
-                                font-size: 3.6vw;
+                                font-size: 2.75vw;
 
                                 & {
                                     .off {
-                                        font-size: 1.28vw;
+                                        font-size: 1.1vw;
                                     }
                                 }
                             }
@@ -219,6 +219,21 @@
                 }
 
                 .button {
+                    padding: 0.625rem 1.875rem;
+
+                    @include mediaQuery($XlargeScreen_min_width) {
+
+                        & {
+                            padding: 0.75rem 2.25rem;
+                        }
+                    }
+
+                    @include mediaQuery($XXlargeScreen_min_width) {
+
+                        & {
+                            padding: 1.375vh 2.1vw;
+                        }
+                    }
 
                     .icon {
                         margin-left: 5px;

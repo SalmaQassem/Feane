@@ -13,7 +13,7 @@ const AddButton = styled.button`
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-size: 16px;
+  font-size: 1rem;
   background-color: #ffbe33;
   color: #fff;
   border: none;
@@ -21,6 +21,20 @@ const AddButton = styled.button`
 
   &:hover {
     background-color: #e69c00;
+  }
+  @media (min-width: 1200px) {
+    & {
+      width: 50px;
+      height: 50px;
+      font-size: 1.12rem;
+    }
+  }
+  @media (min-width: 2000px) {
+    & {
+      width: 3vw;
+      height: 3vw;
+      font-size: 1.1vw;
+    }
   }
 `;
 

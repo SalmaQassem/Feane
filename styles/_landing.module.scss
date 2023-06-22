@@ -3,10 +3,16 @@
 @use "../helpers/mediaQuery_mixin" as *;
 
 .landing {
-    padding: 7vh 0 11vh;
+    padding: 45px 0 75px 0;
     flex: 1;
     display: flex;
     align-items: center;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            padding: 5.4vh 0 9vh 0;
+        }
+    }
 
     .text {
         width: 100%;
@@ -67,12 +73,18 @@
 
         .button {
             margin-top: 2.5%;
-            padding: 0.6rem 2.8rem;
+            padding: 0.625rem 2.8125rem;
 
             @include mediaQuery($XlargeScreen_min_width) {
                 & {
                     margin-top: 1.2vh;
-                    padding: 1.2vh 3.2vw;
+                    padding: 0.75rem 3.375rem;
+                }
+            }
+
+            @include mediaQuery($XXlargeScreen_min_width) {
+                & {
+                    padding: 1.375vh 3.15vw;
                 }
             }
         }

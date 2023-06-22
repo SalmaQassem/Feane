@@ -7,22 +7,35 @@
     max-width: 100%;
     display: none;
     flex: 100%;
-    background: -o-linear-gradient(top, #f1f2f3 25px, $NavyColor 25px);
-    background: linear-gradient(to bottom, #f1f2f3 25px, $NavyColor 25px);
+    background: linear-gradient(to bottom, #f1f2f3 0 35%, $NavyColor 35% 100%);
     border-radius: 15px;
     overflow: hidden;
 
     @include mediaQuery($smallScreen_min_width) {
         & {
-            max-width: calc((100% - 30px) / 2);
-            flex: calc((100% - 30px) / 2);
+            max-width: calc((100% - 1.875rem) / 2);
+            flex: calc((100% - 1.875rem) / 2);
+        }
+    }
+
+    @include mediaQuery($largeScreen_min_width) {
+        & {
+            max-width: calc((100% - 3.75rem) / 3);
+            flex: calc((100% - 3.75rem) / 3);
+        }
+    }
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            border-radius: 1.8vh;
         }
     }
 
     @include mediaQuery($XXlargeScreen_min_width) {
         & {
-            max-width: calc((100% - 60px) / 3);
-            flex: calc((100% - 60px) / 3);
+            max-width: calc((100% - 4.2vw) / 3);
+            flex: calc((100% - 4.2vw) / 3);
+            border-radius: 2.1vh;
         }
     }
 
@@ -33,21 +46,30 @@
     .imageContainer {
         width: 100%;
         height: 215px;
-        padding: 2.7vh 2.7vh;
+        padding: 1.5625rem 1.5625rem;
         @include flex_row;
         border-radius: 0 0 0 45px;
         background-color: #f1f2f3;
 
         @include mediaQuery($XlargeScreen_min_width) {
             & {
+                padding: 3vh 3vh;
+                border-radius: 0 0 0 5.4vh;
+            }
+        }
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
                 height: 23.5vh;
+                padding: 3.5vh 3.5vh;
+                border-radius: 0 0 0 6.3vh;
             }
         }
 
         img {
-            width: 10vw;
-            height: 145px;
+            width: auto;
             max-width: 100%;
+            height: 145px;
             transition: 0.2s;
 
             @include mediaQuery($XlargeScreen_min_width) {
@@ -63,19 +85,55 @@
     }
 
     .description {
-        padding: 2.7vh 2.7vh;
+        padding: 1.5625rem 1.5625rem;
         text-align: start;
         color: #fff;
+
+        @include mediaQuery($XlargeScreen_min_width) {
+            & {
+                padding: 3vh 3vh;
+            }
+        }
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                padding: 3.5vh 3.5vh;
+            }
+        }
 
         .h3 {
             margin-bottom: 8px;
             font-size: 20px;
             text-transform: capitalize;
+
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    font-size: 1.4rem;
+                }
+            }
+
+            @include mediaQuery($XXlargeScreen_min_width) {
+                & {
+                    font-size: 1.375vw;
+                }
+            }
         }
 
         .p {
             margin-bottom: 16px;
             font-size: 15px;
+
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    font-size: 1.05rem;
+                }
+            }
+
+            @include mediaQuery($XXlargeScreen_min_width) {
+                & {
+                    font-size: 1.03125vw;
+                }
+            }
         }
 
         .priceContainer {
@@ -87,6 +145,18 @@
                 font-size: 16px;
                 font-weight: 400;
                 margin: 10px 0 8px;
+
+                @include mediaQuery($XlargeScreen_min_width) {
+                    & {
+                        font-size: 1.12rem;
+                    }
+                }
+
+                @include mediaQuery($XXlargeScreen_min_width) {
+                    & {
+                        font-size: 1.1vw;
+                    }
+                }
             }
         }
     }

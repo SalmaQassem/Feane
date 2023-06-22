@@ -1,22 +1,47 @@
 @use "../helpers/flex_row_mixin" as *;
 @use "./variables/colors" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+@use "./variables/mediaQuery" as *;
 
 .filters {
     @include flex_row;
     flex-wrap: wrap;
-    margin: 40px 0 20px 0;
+    margin: 2.5rem 0 1.25rem 0;
     list-style: none;
     overflow: hidden;
 
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            margin: 4.75vh 0 2.375vh 0;
+        }
+    }
+
     .filter {
-        padding: 7px 25px;
-        border-radius: 25px;
+        padding: 0.4375rem 1.5625rem;
+        border-radius: 1.5625rem;
         text-transform: capitalize;
         cursor: pointer;
 
         &.active {
             color: #fff;
             background-color: $NavyColor;
+        }
+
+        @include mediaQuery($XlargeScreen_min_width) {
+            & {
+                padding: 0.525rem 1.875rem;
+                border-radius: 1.875rem;
+                font-size: 1.12rem;
+            }
+        }
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                padding: 0.9625vh 1.785vw;
+                ;
+                border-radius: 1.785vw;
+                font-size: 1.1vw;
+            }
         }
     }
 }

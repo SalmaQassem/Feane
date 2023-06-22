@@ -1,7 +1,22 @@
+@use "../helpers/mediaQuery_mixin" as *;
+@use "./variables/mediaQuery" as *;
+
 .menuItems {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 1.875rem;
     padding-top: 25px;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            padding-top: 2.96875vh;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            gap: 2.1vw;
+        }
+    }
 }

@@ -1,11 +1,33 @@
 @use "../styles/variables/dimensions" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+@use "../styles/variables/mediaQuery" as *;
 
 .menu {
-    padding: $SectionPadding;
+    padding-bottom: 90px;
     text-align: center;
 
-    .viewBtn {
-        padding: 10px 55px;
-        margin-top: 45px;
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            padding-bottom: 10.8vh;
+        }
     }
+
+    .viewBtn {
+        padding: 0.625em 3.4375rem;
+        margin-top: 45px;
+
+        @include mediaQuery($XlargeScreen_min_width) {
+            & {
+                padding: 0.75rem 4.125rem;
+                margin-top: 5.34375vh;
+            }
+        }
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                padding: 1.375vh 3.93vw;
+            }
+        }
+    }
+
 }
