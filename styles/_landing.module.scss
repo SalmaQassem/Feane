@@ -42,6 +42,7 @@
 
             @include mediaQuery($XlargeScreen_min_width) {
                 & {
+                    margin-bottom: 2.34375vh;
                     font-size: 3.9375rem;
                 }
             }

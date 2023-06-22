@@ -108,6 +108,7 @@
 
             @include mediaQuery($XlargeScreen_min_width) {
                 & {
+                    margin-bottom: 1.25vh;
                     font-size: 1.4rem;
                 }
             }
@@ -125,6 +126,7 @@
 
             @include mediaQuery($XlargeScreen_min_width) {
                 & {
+                    margin-bottom: 2.5vh;
                     font-size: 1.05rem;
                 }
             }
