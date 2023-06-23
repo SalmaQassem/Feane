@@ -3,7 +3,6 @@
 @use "../styles/variables/colors" as *;
 @use "../styles/variables/mediaQuery" as *;
 @use "../helpers/mediaQuery_mixin" as *;
-@use "../helpers/flex_row_mixin" as *;
 
 %spin {
     appearance: none;

@@ -1,0 +1,116 @@
+@use "../styles/variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+@use "../styles/variables/colors" as *;
+@use "../helpers/flex_row_mixin" as *;
+
+.box {
+    margin: 0 0.9375rem;
+    cursor: grab;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            margin: 0 1.78125vh;
+        }
+    }
+
+    .review {
+        padding: 1.5625rem;
+        border-radius: 5px;
+        color: #fff;
+        text-align: start;
+        background-color: $NavyColor;
+
+        .p {
+            font-size: 15px;
+
+            &.details {
+                margin-bottom: 0.625rem;
+            }
+        }
+
+        .h4 {
+            margin: 0.9375rem 0 0.3125rem 0;
+            font-size: 18px;
+        }
+
+        @include mediaQuery($XlargeScreen_min_width) {
+            & {
+                padding: 3vh;
+                border-radius: 0.5vh;
+
+                .p {
+                    font-size: 1.05rem;
+
+                    &.details {
+                        margin-bottom: 1.1875vh;
+                    }
+                }
+
+                .h4 {
+                    margin: 1.78125vh 0 0.59375vh 0;
+                    font-size: 1.26rem;
+                }
+            }
+        }
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                padding: 3.5vh;
+
+                .p {
+                    font-size: 1.03125vw;
+                }
+
+                .h4 {
+                    font-size: 1.2375vw;
+                }
+            }
+        }
+    }
+
+    .imgContainer {
+        width: 115px;
+        height: 115px;
+        @include flex_row;
+        position: relative;
+        margin-top: 1.875rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -26px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 15px solid;
+            border-color: transparent transparent $MainColor transparent;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            border: 5px solid $MainColor;
+            border-radius: 100%;
+        }
+
+        @include mediaQuery($XlargeScreen_min_width) {
+            & {
+                width: 13.66vh;
+                height: 13.66vh;
+                margin-top: 3.5625vh;
+            }
+        }
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                &::before {
+                    top: -2.86vh;
+                    border-width: 1.65vh;
+                }
+
+                img {
+                    border-width: 0.55vh;
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import classes from "../styles/_menuItems.module.scss";
+import classes from "../../styles/_menuItems.module.scss";
 import MenuItem from "./MenuItem";
 //import { useSelector } from "react-redux";
 

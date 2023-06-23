@@ -1,4 +1,4 @@
-import classes from "../styles/_menuFilters.module.scss";
+import classes from "../../styles/_menuFilters.module.scss";
 import { useState } from "react";
 
 const filters = [

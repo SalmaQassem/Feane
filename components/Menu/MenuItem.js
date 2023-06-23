@@ -1,6 +1,6 @@
-import classes from "../styles/_menuItem.module.scss";
+import classes from "../../styles/_menuItem.module.scss";
 import Image from "next/image";
-import AddButton from "./UI/AddButton";
+import AddButton from "../UI/AddButton";
 import { useCallback } from "react";
 //import { useDispatch } from "react-redux";
 //import { cartActions } from "../../store/cartSlice";

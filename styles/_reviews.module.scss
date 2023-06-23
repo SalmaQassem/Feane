@@ -1,0 +1,70 @@
+@use "../styles/variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+@use "../helpers/flex_row_mixin" as *;
+
+%carouselButton {
+    width: 45px !important;
+    height: 45px !important;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            width: 56.25px !important;
+            height: 56.25px !important;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            width: 3.375vw !important;
+            height: 3.375vw !important;
+        }
+    }
+}
+
+.reviews {
+    padding-bottom: 90px;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            padding-bottom: 10.8vh;
+        }
+    }
+
+    .header {
+        margin-bottom: 2.5rem;
+        text-align: center;
+
+        @include mediaQuery($XlargeScreen_min_width) {
+            & {
+                margin-bottom: 4.75vh;
+            }
+        }
+    }
+
+    .sliderButtons {
+        margin-top: 2.8125rem;
+        @include flex_row;
+        gap: 0.625rem;
+        position: relative;
+
+        @include mediaQuery($XlargeScreen_min_width) {
+            & {
+                margin-top: 5.34375vh;
+            }
+        }
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                gap: 0.7vw;
+            }
+        }
+
+        .leftButton {
+            @extend %carouselButton;
+        }
+
+        .rightButton {
+            @extend %carouselButton;
+        }
+    }
+}
