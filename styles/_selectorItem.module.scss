@@ -1,3 +1,6 @@
+@use "../styles/variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+
 %background {
     background-color: #f6f6f6;
 }
@@ -8,6 +11,20 @@
     line-height: 40px;
     font-family: "OpenSans-Regular", sans-serif;
 
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            padding: 0 3.48vh 0 2.16vh;
+            line-height: 4.8vh;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            padding: 0 4.06vh 0 2.52vh;
+            line-height: 5.6vh;
+        }
+    }
+
     &.selected {
         @extend %background;
         font-family: "OpenSans-Bold", sans-serif;
@@ -16,4 +33,5 @@
     &:hover {
         @extend %background;
     }
+
 }

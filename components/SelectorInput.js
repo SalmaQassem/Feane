@@ -1,4 +1,5 @@
 import classes from "../styles/_selectorInput.module.scss";
+import styles from "../styles/_selectorItem.module.scss";
 import SelectorItem from "./SelectorItem";
 
 const SelectorInput = (props) => {
@@ -24,8 +25,8 @@ const SelectorInput = (props) => {
         <li
           className={
             props.selector === ""
-              ? `${classes.firstItem} ${classes.selected}`
-              : classes.firstItem
+              ? `${styles.li} ${classes.firstItem} ${styles.selected}`
+              : `${styles.li} ${classes.firstItem}`
           }
         >
           {props.default}

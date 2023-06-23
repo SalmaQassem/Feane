@@ -248,12 +248,12 @@ const BookTable = () => {
                   onOpen={onOpenHandler}
                   selector={selectorValue}
                 />
+                {!isOpened && !isSelectorValid && isSelectorTouched && (
+                  <p className={classes.feedback}>
+                    Number of persons must be selected
+                  </p>
+                )}
               </div>
-              {!isOpened && !isSelectorValid && isSelectorTouched && (
-                <p className={classes.feedback}>
-                  Number of persons must be selected
-                </p>
-              )}
               <div className={classes.inputContainer}>
                 <input
                   className={
