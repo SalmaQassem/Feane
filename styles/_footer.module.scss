@@ -8,10 +8,22 @@
   color: #fff;
   text-align: center;
 
+  @include mediaQuery($XlargeScreen_min_width) {
+    & {
+      padding: 9vh 0 4.8vh 0;
+    }
+  }
+
   .box {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -15px;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+      & {
+        margin: 0 0.8vw;
+      }
+    }
 
     .item {
       width: 100%;
@@ -24,6 +36,20 @@
           flex: 0 0 calc(100% / 3);
         }
       }
+
+      @include mediaQuery($XlargeScreen_min_width) {
+        & {
+          margin-bottom: 3.5625vh;
+          font-size: 1.12rem;
+        }
+      }
+
+      @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+          padding: 0 0.8vw;
+          font-size: 1.1vw;
+        }
+      }
     }
   }
 
@@ -33,6 +59,25 @@
     p {
       &:first-of-type {
         margin-bottom: 24px;
+      }
+    }
+
+    @include mediaQuery($XlargeScreen_min_width) {
+      & {
+        margin-top: 2.96875vh;
+        font-size: 1.12rem;
+
+        p {
+          &:first-of-type {
+            margin-bottom: 2.85vh;
+          }
+        }
+      }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+      & {
+        font-size: 1.1vw;
       }
     }
   }

@@ -7,6 +7,19 @@ const FooterHeader = styled.h4`
   font-weight: 400;
   line-height: 1.2;
   text-transform: capitalize;
+
+  @media (min-width: 1200px) {
+    & {
+      margin-bottom: 2.375vh;
+      font-size: 1.96rem;
+    }
+  }
+
+  @media (min-width: 2000px) {
+    & {
+      font-size: 1.925vw;
+    }
+  }
 `;
 
 export default FooterHeader;

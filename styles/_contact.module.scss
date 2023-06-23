@@ -1,4 +1,6 @@
 @use "./variables/colors" as *;
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
 
 .box {
     display: flex;
@@ -10,6 +12,12 @@
             color: #fff;
             margin: 5px 0;
 
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    margin: 0.59375vh 0;
+                }
+            }
+
             &:hover {
                 color: $MainColor;
             }
@@ -17,6 +25,19 @@
             .icon {
                 font-size: 14px;
                 margin-right: 8px;
+
+                @include mediaQuery($XlargeScreen_min_width) {
+                    & {
+                        margin-right: 0.95vh;
+                        font-size: 0.98rem;
+                    }
+                }
+
+                @include mediaQuery($XXlargeScreen_min_width) {
+                    & {
+                        font-size: 0.9625vw;
+                    }
+                }
             }
         }
     }

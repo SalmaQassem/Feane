@@ -1,5 +1,7 @@
 @use "../helpers/flex_row_mixin" as *;
 @use "./variables/colors" as *;
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
 
 %links {
     @include flex_row;
@@ -13,6 +15,18 @@
         color: #fff;
         font-size: 38px !important;
         line-height: 1;
+
+        @include mediaQuery($XlargeScreen_min_width) {
+            & {
+                font-size: 2.66rem !important;
+            }
+        }
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                font-size: 2.6125vw !important;
+            }
+        }
     }
 
     .links {
@@ -21,17 +35,43 @@
         gap: 5px;
         cursor: pointer;
 
+        @include mediaQuery($XlargeScreen_min_width) {
+            & {
+                margin: 2.375vh 0 1.1875vh 0;
+            }
+        }
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                gap: 0.35vw;
+            }
+        }
+
         a {
             width: 30px;
             height: 30px;
             @extend %links;
-            font-size: 18px;
+            font-size: 16px;
             border-radius: 50%;
             background-color: #fff;
             color: $NavyColor;
 
             &:hover {
                 color: $MainColor;
+            }
+
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    font-size: 1.12rem;
+                }
+            }
+
+            @include mediaQuery($XXlargeScreen_min_width) {
+                & {
+                    width: 3.3vh;
+                    height: 3.3vh;
+                    font-size: 1.1vw;
+                }
             }
         }
     }
