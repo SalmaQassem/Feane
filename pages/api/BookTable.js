@@ -9,7 +9,6 @@ async function handler(req, res) {
     const db = client.db();
     const bookingCollection = db.collection("Bookings");
     const result = await bookingCollection.insertOne(data);
-    console.log(result);
     client.close();
     res.status(201).json({ message: "Your booking has been confirmed." });
   }

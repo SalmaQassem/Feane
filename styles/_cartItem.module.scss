@@ -1,0 +1,124 @@
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+@use "./variables/colors" as *;
+@use "../helpers/flex_row_mixin" as *;
+
+.cartItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.8125rem;
+
+    @include mediaQuery($smallScreen_min_width) {
+        & {
+            font-size: 0.875rem;
+        }
+    }
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            font-size: 0.98rem;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            gap: 0.49vw;
+            font-size: 0.9625vw;
+        }
+    }
+
+    .image {
+        width: 20%;
+
+        img {
+            width: 50px;
+            height: 50px;
+
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    width: 5.95vh;
+                    height: 5.95vh;
+                }
+            }
+        }
+    }
+
+    .name {
+        width: 30%;
+        text-transform: capitalize;
+        flex: 1;
+    }
+
+    .amountButtons {
+        width: 30%;
+        @include flex_row;
+
+        .button {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: none;
+            background-color: $MainColor;
+            color: #fff;
+            font-size: 13px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $HoverColor;
+            }
+
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    width: 2.38vh;
+                    height: 2.38vh;
+                    font-size: 0.91rem;
+                }
+            }
+
+            @include mediaQuery($XXlargeScreen_min_width) {
+                & {
+                    font-size: 0.89375vw;
+                }
+            }
+        }
+
+        .amount {
+            margin: 0 8px;
+
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    margin: 0 1.25vh;
+                }
+            }
+        }
+    }
+
+    .price {
+        width: 20%;
+        text-align: end;
+
+        button {
+            font-size: 12px;
+
+            @include mediaQuery($smallScreen_min_width) {
+                & {
+                    font-size: 13px;
+                }
+            }
+
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    font-size: 0.91rem;
+                }
+            }
+
+            @include mediaQuery($XXlargeScreen_min_width) {
+                & {
+                    font-size: 0.89375vw;
+                }
+            }
+        }
+    }
+}

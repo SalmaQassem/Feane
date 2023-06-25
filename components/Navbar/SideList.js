@@ -1,4 +1,6 @@
 import classes from "../../styles/_sideList.module.scss";
+import { cartActions } from "../../store/cartSlice";
+import { useDispatch } from "react-redux";
 import Link from "next/link";
 import { FaUser, FaShoppingCart, FaSearch } from "react-icons/fa";
 import Button from "../UI/Button";
@@ -22,11 +24,13 @@ const sideLinks = [
   },
 ];
 const SideList = (props) => {
+  const dispatch = useDispatch();
+
   const linkClickHandler = () => {
     props.linkHandler();
   };
   const onCartClickHandler = () => {
-    //cartContext.setIsCartOpened(true);
+    dispatch(cartActions.setIsCartOpenedHandler(true));
   };
 
   return (
