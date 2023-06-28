@@ -5,6 +5,8 @@ import About from "./About";
 import BookTable from "./BookTable";
 import Reviews from "../components/Reviews/Reviews";
 import { MongoClient } from "mongodb";
+/*import { menuActions } from "../store/menuSlice";
+import { useDispatch } from "react-redux";*/
 
 const HomePage = (props) => {
   return (

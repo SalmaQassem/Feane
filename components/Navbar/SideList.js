@@ -12,7 +12,7 @@ const sideLinks = [
     label: "Profile Page",
   },
   {
-    url: "/",
+    url: "",
     class: classes.cart,
     icon: <FaShoppingCart />,
     label: "Cart Page",

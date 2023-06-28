@@ -1,3 +1,4 @@
+"use client";
 import { createSlice } from "@reduxjs/toolkit";
 
 const cartInitialState = {
@@ -10,7 +11,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: cartInitialState,
   reducers: {
-    setIsCartOpenedHandler(state,action) {
+    setIsCartOpenedHandler(state, action) {
       state.isCartOpened = action.payload;
     },
     addItems(state, action) {

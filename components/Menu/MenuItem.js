@@ -2,16 +2,18 @@ import classes from "../../styles/_menuItem.module.scss";
 import Image from "next/image";
 import AddButton from "../UI/AddButton";
 import { useCallback } from "react";
-//import { useDispatch } from "react-redux";
-//import { cartActions } from "../../store/cartSlice";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../store/cartSlice";
 import { FaShoppingCart } from "react-icons/fa";
 
 const MenuItem = (props) => {
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const onFormSubmitHandler = useCallback(
     (e) => {
       e.preventDefault();
       const item = props.menu.find((obj) => {
+        console.log(obj.id);
+        console.log(parseInt(e.target.id));
         return obj.id === parseInt(e.target.id);
       });
       if (item) {
@@ -21,10 +23,10 @@ const MenuItem = (props) => {
           name: item.name,
           price: item.price,
         };
-        //dispatch(cartActions.addItems(selectedItem));
+        dispatch(cartActions.addItems(selectedItem));
       }
-    }
-    //[props, dispatch]
+    },
+    [props, dispatch]
   );
 
   return (

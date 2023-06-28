@@ -21,6 +21,7 @@ const BookTable = () => {
   const Map = dynamic(() => import("../../components/Map"), {
     ssr: false,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isConfirm, setIsConfirm] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
@@ -93,7 +94,7 @@ const BookTable = () => {
     ) {
       return;
     }
-
+    setIsSubmitting(true);
     const response = await fetch("/api/BookTable", {
       method: "POST",
       body: JSON.stringify({
@@ -106,6 +107,8 @@ const BookTable = () => {
       headers: {
         "Content-Type": "application/json",
       },
+    }).then(() => {
+      setIsSubmitting(false);
     });
 
     setIsSubmitted(true);
@@ -275,7 +278,9 @@ const BookTable = () => {
                   <p className={classes.feedback}>Date must be selected</p>
                 )}
               </div>
-              <BookButton aria-label="book">book now</BookButton>
+              <BookButton aria-label="book">
+                {isSubmitting === true ? "submitting..." : "book now"}
+              </BookButton>
             </form>
             <div className={classes.map}>
               <Map />
