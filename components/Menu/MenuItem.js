@@ -12,9 +12,7 @@ const MenuItem = (props) => {
     (e) => {
       e.preventDefault();
       const item = props.menu.find((obj) => {
-        console.log(obj.id);
-        console.log(parseInt(e.target.id));
-        return obj.id === parseInt(e.target.id);
+        return obj.id === e.target.id;
       });
       if (item) {
         const selectedItem = {

@@ -1,6 +1,6 @@
 import classes from "../../styles/_sideList.module.scss";
 import { cartActions } from "../../store/cartSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import { FaUser, FaShoppingCart, FaSearch } from "react-icons/fa";
 import Button from "../UI/Button";
@@ -25,6 +25,7 @@ const sideLinks = [
 ];
 const SideList = (props) => {
   const dispatch = useDispatch();
+  const amount = useSelector((state) => state.cart.totalAmount);
 
   const linkClickHandler = () => {
     props.linkHandler();
@@ -38,7 +39,11 @@ const SideList = (props) => {
       <ul className={classes.sideList}>
         {sideLinks.map((link) => {
           return (
-            <li key={link.label} className={link.class && link.class}>
+            <li
+              key={link.label}
+              className={link.class && link.class}
+              data-before={link.class === classes.cart && amount}
+            >
               <Link
                 href={link.url}
                 aria-label={link.label}

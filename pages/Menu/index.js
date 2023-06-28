@@ -6,11 +6,9 @@ import MenuFilters from "../../components/Menu/MenuFilters";
 import MenuItems from "../../components/Menu/MenuItems";
 import Button from "../../components/UI/Button";
 import { useState, useCallback } from "react";
-//import { useSelector } from "react-redux";
-//import { MongoClient } from "mongodb";
+import { MongoClient } from "mongodb";
 
 const Menu = (props) => {
-  //const menu = useSelector((state) => state.menu.items);
   const [activeCategory, setActiveCategory] = useState("all");
   const onFilterHandler = useCallback((target) => {
     setActiveCategory(target.textContent);
@@ -41,7 +39,7 @@ const Menu = (props) => {
   );
 };
 
-/*export async function getStaticProps() {
+export async function getStaticProps() {
   const client = await MongoClient.connect(
     "mongodb+srv://SalmaQassem:Salma499@cluster0.xeioklz.mongodb.net/FeaneDatabase?retryWrites=true&w=majority"
   );
@@ -64,6 +62,6 @@ const Menu = (props) => {
       }),
     },
   };
-}*/
+}
 
 export default Menu;

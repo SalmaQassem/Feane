@@ -3,12 +3,12 @@
 @use "../styles/variables/mediaQuery" as *;
 
 .menu {
-    padding-bottom: 90px;
+    padding: 90px 0;
     text-align: center;
 
     @include mediaQuery($XlargeScreen_min_width) {
         & {
-            padding-bottom: 10.8vh;
+            padding: 10.8vh;
         }
     }
 

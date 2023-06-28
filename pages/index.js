@@ -5,8 +5,6 @@ import About from "./About";
 import BookTable from "./BookTable";
 import Reviews from "../components/Reviews/Reviews";
 import { MongoClient } from "mongodb";
-/*import { menuActions } from "../store/menuSlice";
-import { useDispatch } from "react-redux";*/
 
 const HomePage = (props) => {
   return (
@@ -19,7 +17,7 @@ const HomePage = (props) => {
         />
       </Head>
       <main>
-        <Offers data={props.data} />
+        <Offers data={props.offers} />
         <Menu data={props.menu} />
         <About />
         <BookTable />
@@ -47,7 +45,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      data: offers.map((item) => ({
+      offers: offers.map((item) => ({
         id: item._id.toString(),
         percentage: item.percentage,
         title: item.title,
@@ -71,4 +69,5 @@ export async function getStaticProps() {
     },
   };
 }
+
 export default HomePage;
