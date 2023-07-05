@@ -30,17 +30,17 @@
         .inputs {
             @extend %style;
 
-            @include mediaQuery($smallScreen_min_width) {
+            @include mediaQuery($medScreen_min_width) {
                 & {
                     flex-direction: row;
                     justify-content: space-between;
-                    gap: 40px;
+                    gap: 50px;
                 }
             }
 
             @include mediaQuery($XXlargeScreen_min_width) {
                 & {
-                    gap: 2.8vw;
+                    gap: 3.5vw;
                 }
             }
 
@@ -58,7 +58,7 @@
                 border: 2px solid $MainColor;
                 cursor: pointer;
 
-                @include mediaQuery($smallScreen_min_width) {
+                @include mediaQuery($medScreen_min_width) {
                     & {
                         width: calc(100% / 3);
                     }

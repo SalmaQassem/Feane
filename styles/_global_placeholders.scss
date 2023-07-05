@@ -105,13 +105,6 @@
     flex-wrap: wrap;
     gap: 20px 50px;
 
-    @include mediaQuery($smallScreen_min_width) {
-        & {
-            flex-direction: row;
-
-        }
-    }
-
     @include mediaQuery($XXlargeScreen_min_width) {
         & {
             gap: 1.4vw 3.5vw;
@@ -122,7 +115,7 @@
 %inputContainer {
     width: 100%;
 
-    @include mediaQuery($smallScreen_min_width) {
+    @include mediaQuery($medScreen_min_width) {
         & {
             width: calc(50% - 25px);
         }
@@ -130,7 +123,7 @@
 
     @include mediaQuery($XXlargeScreen_min_width) {
         & {
-            width: calc(50% - 3.5vw);
+            width: calc(50% - 1.75vw);
         }
     }
 }
