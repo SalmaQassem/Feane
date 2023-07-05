@@ -2,6 +2,7 @@ import classes from "../../styles/_shipping.module.scss";
 import { useState, useCallback } from "react";
 import useInput from "@/hooks/useInput";
 import SelectorInput from "../SelectorInput";
+
 const DUMMYCOUNTRIES = [
   { id: "c0", value: "", governorates: [] },
   {
@@ -39,6 +40,7 @@ const DUMMYCOUNTRIES = [
     ],
   },
 ];
+
 const Shipping = () => {
   const [isCountryOpened, setIsCountryOpened] = useState(false);
   const [isGovernorateOpened, setIsGovernorateOpened] = useState(false);
@@ -67,6 +69,10 @@ const Shipping = () => {
     (item) => item.value === countryValue
   ).governorates;
 
+  const onSelectCountry = (e) => {
+    changeCountryHandler(e);
+    resetGovernorate();
+  };
   const onOpenCountryHandler = useCallback(() => {
     blurCountryHandler();
     setIsCountryOpened((prevState) => {
@@ -80,6 +86,7 @@ const Shipping = () => {
       return !prevState;
     });
   }, [blurGovernorateHandler]);
+
   return (
     <div className={classes.container}>
       <h1>shipping details</h1>
@@ -89,7 +96,7 @@ const Shipping = () => {
           <SelectorInput
             data={DUMMYCOUNTRIES}
             default="Choose Country?"
-            changeSelector={changeCountryHandler}
+            changeSelector={onSelectCountry}
             isSelectorOpened={isCountryOpened}
             isValid={isCountryValid}
             isTouched={isCountryTouched}

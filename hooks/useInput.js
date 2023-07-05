@@ -14,7 +14,7 @@ const useInput = (validateValue) => {
     }
   };
   const changeInputHandler = (e) => {
-    setInputValue(e.target.value.toString());
+    setInputValue(e.target.textContent);
   };
   const blurInputHandler = () => {
     if (!isInputTouched) {

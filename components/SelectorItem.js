@@ -11,7 +11,6 @@ const SelectorItem = (props) => {
           ? `${classes.li} ${classes.selected}`
           : classes.li
       }
-      value={props.data}
       onClick={selectorHandler}
     >
       {props.data}
