@@ -12,7 +12,7 @@
 }
 
 .container {
-    @extend %container;
+    @extend %largeContainer;
 
     h1 {
         @extend %h1;

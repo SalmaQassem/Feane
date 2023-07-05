@@ -3,17 +3,14 @@
 @use "../helpers/mediaQuery_mixin" as *;
 
 .container {
-    @extend %container;
-    flex-basis: calc(65% - 1.5625rem);
-
-    @include mediaQuery($XXlargeScreen_min_width) {
-        & {
-            flex-basis: calc(65% - 1.75vw);
-        }
-    }
+    @extend %largeContainer;
 
     h1 {
         @extend %h1;
+    }
+
+    p {
+        @extend %fontSize;
     }
 
     .items {

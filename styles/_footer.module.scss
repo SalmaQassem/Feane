@@ -17,7 +17,6 @@
   .box {
     display: flex;
     flex-direction: column;
-    //flex-wrap: wrap;
     margin: 0 -15px;
 
     @include mediaQuery($medScreen_min_width) {

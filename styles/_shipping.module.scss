@@ -1,7 +1,7 @@
 @use "./global_placeholders" as *;
 
 .container {
-    @extend %container;
+    @extend %largeContainer;
 
     h1 {
         @extend %h1;

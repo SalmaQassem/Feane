@@ -62,6 +62,17 @@
     }
 }
 
+%largeContainer {
+    @extend %container;
+    flex-basis: calc(65% - 1.5625rem);
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            flex-basis: calc(65% - 1.75vw);
+        }
+    }
+}
+
 %text {
     display: block;
     color: #7b7b7b;
