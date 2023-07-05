@@ -1,4 +1,3 @@
-@use "../styles/variables/dimensions" as *;
 @use "../helpers/flex_row_mixin" as *;
 @use "../styles/variables/colors" as *;
 @use "../styles/variables/mediaQuery" as *;
@@ -75,7 +74,7 @@
 
             @include mediaQuery($XlargeScreen_min_width) {
                 & {
-                    padding: 3.6vh 3vh;
+                    padding: 2.25rem 1.875rem;
                     border-radius: 0.5vh;
 
                     .icon {
@@ -103,7 +102,7 @@
             @include mediaQuery($XXlargeScreen_min_width) {
                 & {
                     width: 23vw;
-                    padding: 4.2vh 3.5vh;
+                    padding: 4.125vh 1.75vw;
 
                     .icon {
                         width: 6.05vh;
@@ -265,7 +264,7 @@
                     @include mediaQuery($XlargeScreen_min_width) {
                         & {
                             margin-bottom: 2.96875vh;
-                            padding: 0.72vh 1.44vh 0.72vh 3vh;
+                            padding: 0.45rem 0.9rem 0.45rem 1.875rem;
                             border-radius: 0.5vh;
                             font-size: 1.12rem;
                         }
@@ -274,7 +273,7 @@
                     @include mediaQuery($XXlargeScreen_min_width) {
                         & {
                             height: 5.5vh;
-                            padding: 0.84vh 1.68vh 0.84vh 3.5vh;
+                            padding: 0.825vh 0.84vw 0.825vh 1.75vw;
                             border-width: 0.11vh;
                             font-size: 1.1vw;
                         }
@@ -346,10 +345,15 @@
             height: 345px;
             border-radius: 10px;
 
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    border-radius: 1vh;
+                }
+            }
+
             @include mediaQuery($XXlargeScreen_min_width) {
                 & {
                     height: 37.95vh;
-                    border-radius: 1vh;
                 }
             }
         }

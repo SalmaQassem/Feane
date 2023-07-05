@@ -1,0 +1,29 @@
+@use "./global_placeholders" as *;
+
+.container {
+    @extend %container;
+
+    h1 {
+        @extend %h1;
+    }
+
+    .info {
+        @extend %info;
+
+        .inputContainer {
+            @extend %inputContainer;
+
+            .label {
+                @extend %label;
+            }
+
+            >div {
+                margin: 0;
+            }
+
+            .input {
+                @extend %input;
+            }
+        }
+    }
+}

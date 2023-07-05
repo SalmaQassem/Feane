@@ -22,7 +22,7 @@ const Button = styled(Link)`
   @media (min-width: 1200px) {
     & {
       padding: 0.6rem 2.25rem;
-      border-radius: 4vw;
+      border-radius: 4.5vh;
       font-size: 1.125rem;
     }
   }

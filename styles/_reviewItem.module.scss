@@ -9,7 +9,7 @@
 
     @include mediaQuery($XlargeScreen_min_width) {
         & {
-            margin: 0 1.78125vh;
+            margin: 0 1.2vw;
         }
     }
 
@@ -35,7 +35,7 @@
 
         @include mediaQuery($XlargeScreen_min_width) {
             & {
-                padding: 3vh;
+                padding: 1.875rem;
                 border-radius: 0.5vh;
 
                 .p {
@@ -55,7 +55,7 @@
 
         @include mediaQuery($XXlargeScreen_min_width) {
             & {
-                padding: 3.5vh;
+                padding: 3.4375vh;
 
                 .p {
                     font-size: 1.03125vw;

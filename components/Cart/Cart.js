@@ -62,10 +62,10 @@ const Cart = () => {
             <h1>${cart.totalPrice}</h1>
           </div>
           <div className={classes.checkoutButtons}>
-            <Button href="/" onClick={onClickCancelHandler}>
+            <Button href="" onClick={onClickCancelHandler}>
               cancel
             </Button>
-            <Button href="/" onClick={onClickCheckoutHandler}>
+            <Button href="Checkout" onClick={onClickCheckoutHandler}>
               checkout
             </Button>
           </div>

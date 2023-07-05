@@ -1,0 +1,111 @@
+@use "./global_placeholders" as *;
+@use "./variables/colors" as *;
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+
+%fontSize {
+    font-size: 15px;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            font-size: 1.05rem;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            font-size: 1.03125vw;
+        }
+    }
+}
+
+.coupon {
+    .label {
+        @extend %label;
+        font-size: 13px;
+
+        @include mediaQuery($XlargeScreen_min_width) {
+            & {
+                font-size: 0.91rem;
+            }
+        }
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                font-size: 0.89375vw;
+            }
+        }
+    }
+
+    .box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 20px;
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                column-gap: 1.4vw;
+            }
+        }
+
+        input {
+            width: calc(70% - 10px);
+            height: 100%;
+            padding: 0.625rem 1.25rem;
+            @extend %fontSize;
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid #999;
+
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    padding: 0.75rem 1.5rem;
+                    border-radius: 0.5vh;
+                }
+            }
+
+            @include mediaQuery($XXlargeScreen_min_width) {
+                & {
+                    width: calc(70% - 0.7vw);
+                    padding: 1.375vh 1.4vw;
+                    border-width: 0.11vh;
+                }
+            }
+        }
+
+        .apply {
+            width: calc(30% - 10px);
+            padding: 10px 5px;
+            color: $MainColor;
+            @extend %fontSize;
+            font-weight: bold;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 2px solid $MainColor;
+            text-transform: capitalize;
+            cursor: pointer;
+            transition: 0.2s;
+
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    padding: 0.75rem 0.375rem;
+                    border-radius: 0.5vh;
+                }
+            }
+
+            @include mediaQuery($XXlargeScreen_min_width) {
+                & {
+                    width: calc(30% - 0.7vw);
+                    padding: 1.375vh 0.35vw;
+                    border-width: 0.22vh;
+                }
+            }
+
+            &:hover {
+                color: $HoverColor;
+                border-color: $HoverColor;
+            }
+        }
+    }
+}

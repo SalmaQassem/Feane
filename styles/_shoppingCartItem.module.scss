@@ -1,0 +1,130 @@
+@use "./global_placeholders" as *;
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+@use "../helpers/flex_row_mixin" as *;
+
+.item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mediaQuery($smallScreen_min_width) {
+        & {
+            flex-direction: row;
+        }
+    }
+
+    .tempImg {
+        width: 100px;
+        height: 100px;
+        display: block;
+        margin-right: 0;
+
+        @include mediaQuery($smallScreen_min_width) {
+            & {
+                margin-right: 40px;
+            }
+        }
+
+        @include mediaQuery($medScreen_min_width) {
+            & {
+                display: none;
+            }
+        }
+    }
+
+    .info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+
+        @include mediaQuery($smallScreen_min_width) {
+            & {
+                align-items: start;
+                text-align: start;
+            }
+        }
+
+        @include mediaQuery($medScreen_min_width) {
+            & {
+                flex-direction: row;
+                align-items: center;
+                gap: 0;
+                text-align: start;
+            }
+        }
+
+        .product {
+            @extend %product;
+
+            .img {
+                width: 70px;
+                height: 70px;
+                display: none;
+                margin-right: 25px;
+
+                @include mediaQuery($medScreen_min_width) {
+                    & {
+                        display: block;
+                    }
+                }
+
+                @include mediaQuery($XXlargeScreen_min_width) {
+                    & {
+                        width: 7.7vh;
+                        height: 7.7vh;
+                        margin-right: 2vw;
+                    }
+                }
+            }
+
+            .title {
+                text-transform: capitalize;
+            }
+        }
+
+        .price {
+            @extend %price;
+        }
+
+        .quantity {
+            @extend %quantity;
+
+            .box {
+                @include flex_row;
+                gap: 10px;
+
+                @include mediaQuery($XXlargeScreen_min_width) {
+                    & {
+                        gap: 0.7vw;
+                    }
+                }
+            }
+
+            .remove {
+                font-weight: bold;
+                text-decoration: none !important;
+
+                .icon {
+                    display: inline-block;
+                    margin-right: 5px;
+                    vertical-align: middle;
+
+                    @include mediaQuery($XlargeScreen_min_width) {
+                        & {
+                            margin-right: 0.4vw
+                        }
+                    }
+                }
+            }
+        }
+
+        .total {
+            @extend %total;
+        }
+    }
+}

@@ -5,7 +5,7 @@
 @use "../helpers/mediaQuery_mixin" as *;
 
 %margin {
-    margin: 0 0.6rem;
+    margin: 0 0.625rem;
 }
 
 %position {
@@ -34,14 +34,14 @@
 
                 @include mediaQuery($XlargeScreen_min_width) {
                     & {
-                        font-size: 1.125rem;
+                        font-size: 1.12rem;
+                        margin: 0 0.8vw;
                     }
                 }
 
                 @include mediaQuery($XXlargeScreen_min_width) {
                     & {
                         font-size: 1.1vw;
-                        margin: 0 0.55vw;
                     }
                 }
 
@@ -58,9 +58,25 @@
                     position: absolute;
                     width: 10px;
                     height: 10px;
+                    top: -35%;
+                    right: -4%;
                     color: $MainColor;
-                    top: -8px;
-                    right: -2px;
+                    font-size: 16px;
+
+                    @include mediaQuery($XlargeScreen_min_width) {
+                        & {
+                            font-size: 1.12rem;
+                            right: -0.1%;
+                        }
+                    }
+
+                    @include mediaQuery($XXlargeScreen_min_width) {
+                        & {
+                            width: 1.1vh;
+                            height: 1.1vh;
+                            font-size: 1.1vw;
+                        }
+                    }
                 }
 
             }
@@ -72,11 +88,12 @@
     }
 
     >a {
-        margin: 0 0.8vw;
+        margin: 0 0.625px;
 
         @include mediaQuery($XlargeScreen_min_width) {
             & {
-                font-size: 1.125rem;
+                font-size: 1.12rem;
+                margin: 0 0.8vw;
             }
         }
 

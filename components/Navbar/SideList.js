@@ -62,7 +62,7 @@ const SideList = (props) => {
           );
         })}
       </ul>
-      <Button href="/" aria-label="Order Button" onClick={linkClickHandler}>
+      <Button href="Menu" aria-label="Order Button" onClick={linkClickHandler}>
         order online
       </Button>
     </div>

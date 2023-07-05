@@ -13,14 +13,14 @@
 
     @include mediaQuery($XlargeScreen_min_width) {
         & {
-            padding: 0 3.48vh 0 2.16vh;
+            padding: 0 2.175rem 0 1.35rem;
             line-height: 4.8vh;
         }
     }
 
     @include mediaQuery($XXlargeScreen_min_width) {
         & {
-            padding: 0 4.06vh 0 2.52vh;
+            padding: 0 2.03vw 0 1.26vw;
             line-height: 5.6vh;
         }
     }
@@ -33,5 +33,4 @@
     &:hover {
         @extend %background;
     }
-
 }

@@ -51,13 +51,13 @@
 
         @include mediaQuery($XlargeScreen_min_width) {
             & {
-                padding: 2.4vh;
+                padding: 1.5rem;
             }
         }
 
         @include mediaQuery($XXlargeScreen_min_width) {
             & {
-                padding: 2.8vh;
+                padding: 2.75vh;
             }
         }
 
@@ -217,7 +217,7 @@
 
         @include mediaQuery($XlargeScreen_min_width) {
             & {
-                padding: 2.4vh;
+                padding: 1.5rem;
 
                 .checkoutContent {
                     .total {
@@ -239,7 +239,7 @@
                     margin-top: 1.5625vh;
 
                     >a {
-                        padding: 0.6vh 2.4vh;
+                        padding: 0.375rem 1.5rem;
                         font-size: 0.98rem;
                     }
                 }
@@ -248,7 +248,7 @@
 
         @include mediaQuery($XXlargeScreen_min_width) {
             & {
-                padding: 2.8vh;
+                padding: 2.75vh;
                 border-top-width: 0.11vh;
 
                 .checkoutContent {
@@ -271,7 +271,7 @@
                     gap: 0.7vw;
 
                     >a {
-                        padding: 0.7vh 2.8vh;
+                        padding: 0.6875vh 2.75vh;
                         font-size: 0.9625vw;
                     }
                 }

@@ -24,12 +24,13 @@ const StyledContainer = styled.div`
   @media (min-width: 1200px) {
     & {
       max-width: 1170px;
+      padding: 0 1.125rem;
     }
   }
   @media (min-width: 2000px) {
     & {
       max-width: 70vw;
-      padding: 0 0.8vw;
+      padding: 0 1.05vw;
     }
   }
 `;

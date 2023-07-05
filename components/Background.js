@@ -1,6 +1,6 @@
-import background from "../../media/images/hero-bg.webp";
+import background from "../media/images/hero-bg.webp";
 import Image from "next/image";
-import classes from "../../styles/_background.module.scss";
+import classes from "../styles/_background.module.scss";
 
 const Background = (props) => {
   return (

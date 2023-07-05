@@ -1,0 +1,113 @@
+@use "../helpers/flex_row_mixin" as *;
+@use "./variables/colors" as *;
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+
+.stepsBar {
+    padding: 30px 0;
+    margin-bottom: 20px;
+    @include flex_row;
+    background-color: #fff;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            padding: 2.25rem 0;
+            margin-bottom: 2.375vh;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            padding: 4.125vh 0;
+        }
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 25px 40px;
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                gap: 1.75vw 2.8vw;
+            }
+        }
+
+        li {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            @include mediaQuery($XXlargeScreen_min_width) {
+                & {
+                    gap: 0.7vw;
+                }
+            }
+
+            >span {
+                min-width: 30px;
+                height: 30px;
+                @include flex_row;
+                color: #fff;
+                font-size: 16px;
+                font-weight: bold;
+                background-color: $MainColor;
+                border-radius: 50%;
+
+                @include mediaQuery($XlargeScreen_min_width) {
+                    & {
+                        font-size: 1.12rem;
+                    }
+                }
+
+                @include mediaQuery($XXlargeScreen_min_width) {
+                    & {
+                        min-width: 3.3vh;
+                        height: 3.3vh;
+                        font-size: 1.1vw;
+                    }
+                }
+            }
+
+            &.active {
+                >span {
+                    color: $MainColor;
+                    background-color: #fff;
+                    border: 2px solid $MainColor;
+
+                    @include mediaQuery($XXlargeScreen_min_width) {
+                        & {
+                            border-width: 0.22vh;
+                        }
+                    }
+                }
+            }
+
+            >p {
+                font-size: 15px;
+                color: #7b7b7b;
+                text-transform: uppercase;
+
+                @include mediaQuery($XlargeScreen_min_width) {
+                    & {
+                        font-size: 1.05rem;
+                    }
+                }
+
+                @include mediaQuery($XXlargeScreen_min_width) {
+                    & {
+                        font-size: 1.03125vw;
+                    }
+                }
+            }
+
+            &.current {
+                >p {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

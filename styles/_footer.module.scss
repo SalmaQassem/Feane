@@ -16,8 +16,15 @@
 
   .box {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    //flex-wrap: wrap;
     margin: 0 -15px;
+
+    @include mediaQuery($medScreen_min_width) {
+      & {
+        flex-direction: row;
+      }
+    }
 
     @include mediaQuery($XlargeScreen_min_width) {
       & {
@@ -30,7 +37,7 @@
       padding: 0 15px;
       margin-bottom: 30px;
 
-      @include mediaQuery($smallScreen_min_width) {
+      @include mediaQuery($medScreen_min_width) {
         & {
           max-width: calc(100% / 3);
           flex: 0 0 calc(100% / 3);
@@ -40,13 +47,14 @@
       @include mediaQuery($XlargeScreen_min_width) {
         & {
           margin-bottom: 3.5625vh;
+          padding: 0 1.125rem;
           font-size: 1.12rem;
         }
       }
 
       @include mediaQuery($XXlargeScreen_min_width) {
         & {
-          padding: 0 0.8vw;
+          padding: 0 1.05vw;
           font-size: 1.1vw;
         }
       }

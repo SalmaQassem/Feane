@@ -1,0 +1,78 @@
+@use "./global_placeholders" as *;
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+
+.container {
+    @extend %container;
+    flex-basis: calc(65% - 1.5625rem);
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            flex-basis: calc(65% - 1.75vw);
+        }
+    }
+
+    h1 {
+        @extend %h1;
+    }
+
+    .items {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                gap: 1.75vw;
+            }
+        }
+
+        .header {
+            width: 100%;
+            display: none;
+            padding: 15px 0;
+            border-top: 1px solid #e5e5e5;
+            border-bottom: 1px solid #e5e5e5;
+            color: #7b7b7b;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+
+            @include mediaQuery($medScreen_min_width) {
+                & {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    padding: 1.125rem 0;
+                }
+            }
+
+            @include mediaQuery($XXlargeScreen_min_width) {
+                & {
+                    padding: 2.0625vh 0;
+                    border-width: 0.11vh;
+                }
+            }
+
+            .product {
+                @extend %product;
+            }
+
+            .price {
+                @extend %price;
+            }
+
+            .quantity {
+                @extend %quantity;
+            }
+
+            .total {
+                @extend %total;
+            }
+        }
+    }
+}

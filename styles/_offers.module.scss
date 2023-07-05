@@ -77,15 +77,14 @@
 
             @include mediaQuery($XlargeScreen_min_width) {
                 & {
-                    padding: 2.4vh 1.8vh;
+                    padding: 1.5rem 1.125rem;
                     border-radius: 0.5vh;
                 }
             }
 
             @include mediaQuery($XXlargeScreen_min_width) {
                 & {
-                    padding: 2.8vh 2.1vh;
-
+                    padding: 2.75vh 1.05vw;
                 }
             }
 
@@ -120,11 +119,16 @@
                     }
                 }
 
+                @include mediaQuery($XlargeScreen_min_width) {
+                    & {
+                        margin-right: 1.2vw;
+                    }
+                }
+
                 @include mediaQuery($XXlargeScreen_min_width) {
                     & {
                         width: 11.5vw;
                         height: 11.5vw;
-                        margin-right: 1.2vw;
                         border-width: 0.35vw;
                     }
                 }
@@ -242,7 +246,7 @@
                         @include mediaQuery($XlargeScreen_min_width) {
 
                             & {
-                                margin-left: 0.5vw;
+                                margin-left: 0.4vw;
                             }
                         }
                     }

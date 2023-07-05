@@ -58,15 +58,13 @@
     @include mediaQuery($XlargeScreen_min_width) {
         & {
             margin-bottom: 2.96875vh;
-            padding: 0.72vh 3.6vh 0.72vh 3vh;
+            padding: 0.45rem 2.25rem 0.45rem 1.875rem;
             border-radius: 0.5vh;
             font-size: 1.12rem;
 
             &::after {
                 content: "";
                 right: 1.44vh;
-                border-top: 2px solid #999;
-                border-left: 2px solid #999;
             }
         }
     }
@@ -74,7 +72,7 @@
     @include mediaQuery($XXlargeScreen_min_width) {
         & {
             height: 5.5vh;
-            padding: 0.84vh 4.2vh 0.84vh 3.5vh;
+            padding: 0.825vh 2.1vw 0.825vh 1.75vw;
             border-width: 0.11vh;
             font-size: 1.1vw;
 
@@ -99,7 +97,6 @@
         top: 100%;
         left: 0;
         z-index: 10;
-        margin-top: 4px;
         list-style: none;
         font-size: 14px;
         background-color: #fff;
@@ -111,6 +108,7 @@
 
         @include mediaQuery($XlargeScreen_min_width) {
             & {
+                margin: 0.475vh 0 1.78125vh 0;
                 font-size: 0.95rem;
                 border-radius: 0.5vh;
             }
@@ -118,8 +116,9 @@
 
         @include mediaQuery($XXlargeScreen_min_width) {
             & {
+                max-height: 22vh;
                 font-size: 0.9625vw;
-                max-height: 44vh;
+                border-width: 0.11vh;
             }
         }
 

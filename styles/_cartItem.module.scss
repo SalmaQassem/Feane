@@ -36,10 +36,10 @@
             width: 50px;
             height: 50px;
 
-            @include mediaQuery($XlargeScreen_min_width) {
+            @include mediaQuery($XXlargeScreen_min_width) {
                 & {
-                    width: 5.95vh;
-                    height: 5.95vh;
+                    width: 5.5vh;
+                    height: 5.5vh;
                 }
             }
         }
@@ -55,41 +55,12 @@
         width: 30%;
         @include flex_row;
 
-        .button {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            border: none;
-            background-color: $MainColor;
-            color: #fff;
-            font-size: 13px;
-            cursor: pointer;
-
-            &:hover {
-                background-color: $HoverColor;
-            }
-
-            @include mediaQuery($XlargeScreen_min_width) {
-                & {
-                    width: 2.38vh;
-                    height: 2.38vh;
-                    font-size: 0.91rem;
-                }
-            }
-
-            @include mediaQuery($XXlargeScreen_min_width) {
-                & {
-                    font-size: 0.89375vw;
-                }
-            }
-        }
-
         .amount {
             margin: 0 8px;
 
             @include mediaQuery($XlargeScreen_min_width) {
                 & {
-                    margin: 0 1.25vh;
+                    margin: 0 0.64vw;
                 }
             }
         }

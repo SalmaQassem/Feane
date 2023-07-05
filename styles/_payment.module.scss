@@ -1,0 +1,110 @@
+@use "./global_placeholders" as *;
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+@use "../helpers/flex_row_mixin" as *;
+@use "./variables/colors" as *;
+
+%style {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+}
+
+.container {
+    @extend %container;
+
+    h1 {
+        @extend %h1;
+    }
+
+    .info {
+        @extend %style;
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                row-gap: 1.4vw;
+            }
+        }
+
+        .inputs {
+            @extend %style;
+
+            @include mediaQuery($smallScreen_min_width) {
+                & {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    gap: 40px;
+                }
+            }
+
+            @include mediaQuery($XXlargeScreen_min_width) {
+                & {
+                    gap: 2.8vw;
+                }
+            }
+
+            .button {
+                width: 100%;
+                height: 60px;
+                padding: 10px;
+                @include flex_row;
+                font-family: "OpenSans-Regular";
+                font-size: 15px;
+                color: #7d7d7d;
+                text-transform: capitalize;
+                background-color: #fff;
+                border-radius: 16px;
+                border: 2px solid $MainColor;
+                cursor: pointer;
+
+                @include mediaQuery($smallScreen_min_width) {
+                    & {
+                        width: calc(100% / 3);
+                    }
+                }
+
+                @include mediaQuery($XlargeScreen_min_width) {
+                    & {
+                        padding: 0.75rem;
+                        font-size: 1.05rem;
+                        border-radius: 1.6vh;
+                    }
+                }
+
+                @include mediaQuery($XXlargeScreen_min_width) {
+                    & {
+                        padding: 1.375vh;
+                        height: 6.6vh;
+                        font-size: 1.03125vw;
+                        border-width: 0.22vh;
+                    }
+                }
+
+                .svg {
+                    width: 50px;
+                    height: 50px;
+
+                    @include mediaQuery($XXlargeScreen_min_width) {
+                        & {
+                            width: 5.5vh;
+                            height: 5.5vh;
+                        }
+                    }
+                }
+            }
+
+            .inputContainer {
+                @extend %inputContainer;
+
+                .label {
+                    @extend %label;
+                }
+
+                .input {
+                    @extend %input;
+                }
+            }
+        }
+    }
+}

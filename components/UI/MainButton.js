@@ -23,13 +23,14 @@ const BookButton = styled.button`
   @media (min-width: 1200px) {
     & {
       padding: 0.75rem 4.125rem;
-      border-radius: 4vw;
+      margn-top: 1.78125;
       font-size: 1.125rem;
+      border-radius: 4.5vh;
     }
   }
   @media (min-width: 2000px) {
     & {
-      padding: 1.375vh 3.93vw;
+      padding: 1.375vh 3.85vw;
       font-size: 1.1vw;
     }
   }

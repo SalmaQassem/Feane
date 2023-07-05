@@ -3,19 +3,19 @@
 
 .menuItems {
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 1.875rem;
     padding-top: 25px;
 
     @include mediaQuery($XlargeScreen_min_width) {
         & {
-            padding-top: 2.96875vh;
+            padding-top: 1.875rem;
         }
     }
 
     @include mediaQuery($XXlargeScreen_min_width) {
         & {
+            padding-top: 3.4375vh;
             gap: 2.1vw;
         }
     }

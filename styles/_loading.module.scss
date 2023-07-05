@@ -13,11 +13,23 @@
     background-color: #f6f6f6;
     color: $MainColor;
 
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            gap: 2.1vw;
+        }
+    }
+
     .ul {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 20px;
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                gap: 1.4vw;
+            }
+        }
 
         li {
             width: 45px;
@@ -39,6 +51,20 @@
                     width: 60px;
                     height: 60px;
                     font-size: 32px;
+                }
+            }
+
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    font-size: 2.24rem;
+                }
+            }
+
+            @include mediaQuery($XXlargeScreen_min_width) {
+                & {
+                    width: 6.6vh;
+                    height: 6.6vh;
+                    font-size: 2.2vw;
                 }
             }
         }

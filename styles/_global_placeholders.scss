@@ -1,4 +1,7 @@
 @use "./variables/colors" as *;
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+@use "../helpers/flex_row_mixin" as *;
 
 %reset {
     margin: 0;
@@ -14,4 +17,247 @@
 
 %color {
     color: $MainColor;
+}
+
+%button {
+    font-size: 12px;
+
+    @include mediaQuery($smallScreen_min_width) {
+        & {
+            font-size: 13px;
+        }
+    }
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            font-size: 0.91rem;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            font-size: 0.89375vw;
+        }
+    }
+}
+
+%container {
+    padding: 1.5625rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px 1px #ccc;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            padding: 1.875rem;
+            border-radius: 0.5vh;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            padding: 3.4375vh;
+            box-shadow: 0 0.11vh 0.44vh 0.11vh #ccc;
+        }
+    }
+}
+
+%text {
+    display: block;
+    color: #7b7b7b;
+    text-transform: capitalize;
+}
+
+%h1 {
+    margin-bottom: 18px;
+    @extend %text;
+    font-size: 18px;
+    font-weight: bold;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            margin-bottom: 2.8125vh;
+            font-size: 1.26rem;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            font-size: 1.2375vw;
+        }
+    }
+}
+
+%info {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px 50px;
+
+    @include mediaQuery($smallScreen_min_width) {
+        & {
+            flex-direction: row;
+
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            gap: 1.4vw 3.5vw;
+        }
+    }
+}
+
+%inputContainer {
+    width: 100%;
+
+    @include mediaQuery($smallScreen_min_width) {
+        & {
+            width: calc(50% - 25px);
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            width: calc(50% - 3.5vw);
+        }
+    }
+}
+
+%label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    @extend %text;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            margin-bottom: 1.5625vh;
+            font-size: 1.12rem;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            font-size: 1.1vw;
+        }
+    }
+}
+
+%input {
+    width: 100%;
+    height: 50px;
+    padding: 6px 30px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    font-size: 16px;
+    outline: none;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            padding: 0.45rem 2.25rem;
+            font-size: 1.12rem;
+            border-radius: 0.5vh;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            height: 5.5vh;
+            padding: 0.825vh 2.1vw;
+            border-width: 0.11vh;
+            font-size: 1.1vw;
+        }
+    }
+}
+
+%fontSize {
+    font-size: 16px;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            font-size: 1.12rem;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            font-size: 1.1vw;
+        }
+    }
+}
+
+%width {
+    width: 100%;
+
+    @include mediaQuery($medScreen_min_width) {
+        & {
+            width: calc(100% /5);
+        }
+    }
+}
+
+%alignText {
+    @include mediaQuery($medScreen_min_width) {
+        & {
+            text-align: center;
+        }
+    }
+}
+
+%product {
+    width: 100%;
+    @include flex_row;
+    @extend %fontSize;
+
+    @include mediaQuery($smallScreen_min_width) {
+        & {
+            justify-content: flex-start
+        }
+    }
+
+    @include mediaQuery($medScreen_min_width) {
+        & {
+            width: calc(100% / 2.5);
+        }
+    }
+}
+
+%price {
+    @extend %width;
+    @extend %alignText;
+    @extend %fontSize;
+}
+
+%quantity {
+    @extend %width;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    @extend %fontSize;
+    @extend %alignText;
+
+    @include mediaQuery($smallScreen_min_width) {
+        & {
+            align-items: start;
+        }
+    }
+
+    @include mediaQuery($medScreen_min_width) {
+        & {
+            align-items: center;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            gap: 0.56vw;
+        }
+    }
+}
+
+%total {
+    @extend %width;
+    @extend %fontSize;
+    @extend %alignText;
 }

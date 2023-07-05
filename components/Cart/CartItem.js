@@ -2,6 +2,7 @@ import classes from "../../styles/_cartItem.module.scss";
 import { useCallback } from "react";
 import { cartActions } from "../../store/cartSlice";
 import { useDispatch } from "react-redux";
+import QuantityButton from "../UI/QuantityButton";
 import RemoveButton from "../UI/RemoveButton";
 
 const CartItem = (props) => {
@@ -25,21 +26,13 @@ const CartItem = (props) => {
       </div>
       <p className={classes.name}>{props.data.name}</p>
       <div className={classes.amountButtons}>
-        <button
-          type="button"
-          className={classes.button}
-          onClick={onClickDecrease}
-        >
+        <QuantityButton type="button" onClick={onClickDecrease}>
           -
-        </button>
+        </QuantityButton>
         <p className={classes.amount}>{props.data.quantity}</p>
-        <button
-          type="button"
-          className={classes.button}
-          onClick={increaseHandler}
-        >
+        <QuantityButton type="button" onClick={increaseHandler}>
           +
-        </button>
+        </QuantityButton>
       </div>
       <div className={classes.price}>
         <p>${props.data.totalPrice}</p>

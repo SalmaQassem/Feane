@@ -1,4 +1,4 @@
-import Background from "../UI/Background";
+import Background from "../Background";
 import Cart from "../Cart/Cart";
 import NavBar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";

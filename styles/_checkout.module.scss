@@ -1,0 +1,108 @@
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+@use "./global_placeholders" as *;
+
+%textColor {
+    color: #7b7b7b;
+}
+
+.checkout {
+    margin-bottom: 30px;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            margin-bottom: 4.6875vh;
+        }
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.625rem;
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                gap: 0.7vw;
+            }
+        }
+
+        .body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 3.125rem;
+
+            @include mediaQuery($largeScreen_min_width) {
+                & {
+                    flex-direction: row;
+                }
+            }
+
+            @include mediaQuery($XXlargeScreen_min_width) {
+                & {
+                    gap: 3.5vw;
+                }
+            }
+
+            .summary {
+                @extend %container;
+                display: flex;
+                flex-direction: column;
+                flex-basis: calc(35% - 1.5625rem);
+                gap: 1.25rem;
+
+                @include mediaQuery($XXlargeScreen_min_width) {
+                    & {
+                        flex-basis: calc(35% - 1.75vw);
+                        gap: 1.4vw;
+                    }
+                }
+
+                .header {
+                    h2 {
+                        margin-bottom: 10px;
+                        font-size: 18px;
+                        text-transform: capitalize;
+                        @extend %textColor;
+
+                        @include mediaQuery($XlargeScreen_min_width) {
+                            & {
+                                margin-bottom: 1.5625vh;
+                                font-size: 1.26rem;
+                            }
+                        }
+
+                        @include mediaQuery($XXlargeScreen_min_width) {
+                            & {
+                                font-size: 1.2375vw;
+                            }
+                        }
+                    }
+
+                    p {
+                        @extend %textColor;
+                        font-size: 15px;
+                        font-weight: 400;
+
+                        @include mediaQuery($XlargeScreen_min_width) {
+                            & {
+                                font-size: 1.05rem;
+                            }
+                        }
+
+                        @include mediaQuery($XXlargeScreen_min_width) {
+                            & {
+                                font-size: 1.03125vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .submit {
+            margin-left: auto;
+        }
+    }
+}

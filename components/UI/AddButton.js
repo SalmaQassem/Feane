@@ -24,15 +24,13 @@ const AddButton = styled.button`
   }
   @media (min-width: 1200px) {
     & {
-      width: 50px;
-      height: 50px;
       font-size: 1.12rem;
     }
   }
   @media (min-width: 2000px) {
     & {
-      width: 3vw;
-      height: 3vw;
+      width: 4.4vh;
+      height: 4.4vh;
       font-size: 1.1vw;
     }
   }

@@ -1,4 +1,3 @@
-@use "./variables/dimensions" as *;
 @use "./variables/colors" as *;
 @use "./variables/mediaQuery" as *;
 @use "../helpers/mediaQuery_mixin" as *;
@@ -25,6 +24,12 @@
             }
         }
 
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                row-gap: 2.1vw;
+            }
+        }
+
         .imagerContainer {
             flex: 1;
             display: flex;
@@ -39,9 +44,15 @@
                 }
             }
 
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    padding: 0 1.125rem;
+                }
+            }
+
             @include mediaQuery($XXlargeScreen_min_width) {
                 & {
-                    padding: 0 0.8vw;
+                    padding: 0 1.05vw;
                 }
             }
 
@@ -73,9 +84,15 @@
                 }
             }
 
+            @include mediaQuery($XlargeScreen_min_width) {
+                & {
+                    padding: 0 1.125rem;
+                }
+            }
+
             @include mediaQuery($XXlargeScreen_min_width) {
                 & {
-                    padding: 0 0.8vw;
+                    padding: 0 1.05vw;
                 }
             }
 

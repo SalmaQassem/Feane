@@ -1,4 +1,4 @@
-import Background from "../UI/Background";
+import Background from "../Background";
 import NavBar from "../Navbar/Navbar";
 import Cart from "../Cart/Cart";
 import Landing from "../Landing";

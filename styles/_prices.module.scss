@@ -1,0 +1,96 @@
+@use "./global_placeholders" as *;
+@use "./variables/colors" as *;
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+
+%text {
+    color: #7b7b7b;
+    text-transform: capitalize;
+}
+
+%fontWeight {
+    font-weight: 400;
+}
+
+%fontSize {
+    font-size: 15px;
+
+    @include mediaQuery($largeScreen_min_width) {
+        & {
+            font-size: 1.05rem;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            font-size: 1.03125vw;
+        }
+    }
+}
+
+%style {
+    color: $MainColor;
+    font-weight: bold;
+    font-size: 18px;
+
+    @include mediaQuery($largeScreen_min_width) {
+        & {
+            font-size: 1.26rem;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            font-size: 1.2375vw;
+        }
+    }
+}
+
+.prices {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            gap: 1.05vw;
+        }
+    }
+
+    .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @extend %fontSize;
+
+        h3 {
+            @extend %text;
+        }
+
+        p {
+            @extend %text;
+        }
+
+        &:not(:last-of-type) {
+            h3 {
+                @extend %fontSize;
+                @extend %fontWeight;
+            }
+
+            p {
+                @extend %fontSize;
+                @extend %fontWeight;
+            }
+        }
+
+        &:last-of-type {
+            h3 {
+                @extend %style;
+            }
+
+            p {
+                @extend %style;
+            }
+        }
+    }
+}
