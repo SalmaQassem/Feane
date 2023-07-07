@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer";
 
 const HomeLayout = (props) => {
   return (
-    <div>
+    <>
       <Background>
         {/*<ProfileProvider>*/}
         <NavBar />
@@ -16,7 +16,7 @@ const HomeLayout = (props) => {
       </Background>
       {props.children}
       <Footer />
-    </div>
+    </>
   );
 };
 

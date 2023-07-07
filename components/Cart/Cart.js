@@ -2,39 +2,40 @@ import classes from "../../styles/_cart.module.scss";
 import Overlay from "../UI/Overlay";
 import Button from "../UI/Button";
 import RemoveButton from "../UI/RemoveButton";
-import { cartActions } from "../../store/cartSlice";
-import { useCallback } from "react";
+import { useContext, useCallback } from "react";
 import CartItem from "./CartItem";
-import { useSelector, useDispatch } from "react-redux";
+import CartContext from "@/context/cartContext/cartContext";
 
 const Cart = () => {
-  const cart = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
+  const cartContext = useContext(CartContext);
 
   const onRemoveAllHandler = useCallback(() => {
-    dispatch(cartActions.removeAll());
-  }, [dispatch]);
+    cartContext.removeAll();
+  }, [cartContext]);
 
-  const onClickCancelHandler = (e) => {
-    e.preventDefault();
-    dispatch(cartActions.setIsCartOpenedHandler(false));
-  };
-  const onClickCheckoutHandler = (e) => {
-    dispatch(cartActions.setIsCartOpenedHandler(false));
-  };
+  const onClickCancelHandler = useCallback(
+    (e) => {
+      e.preventDefault();
+      cartContext.setIsCartOpened(false);
+    },
+    [cartContext]
+  );
+  const onClickCheckoutHandler = useCallback(() => {
+    cartContext.setIsCartOpened(false);
+  }, [cartContext]);
 
   return (
     <>
       <Overlay
         className={
-          cart.isCartOpened === true
+          cartContext.isCartOpened === true
             ? `${classes.overlay} ${classes.opened}`
             : classes.overlay
         }
       ></Overlay>
       <section
         className={
-          cart.isCartOpened === true
+          cartContext.isCartOpened === true
             ? `${classes.cart} ${classes.opened}`
             : classes.cart
         }
@@ -46,8 +47,8 @@ const Cart = () => {
           </div>
           <div className={classes.body}>
             <div className={classes.items}>
-              {cart.items.length > 0 &&
-                cart.items.map((item) => {
+              {cartContext.items.length > 0 &&
+                cartContext.items.map((item) => {
                   return <CartItem data={item} key={item.id} />;
                 })}
             </div>
@@ -57,9 +58,9 @@ const Cart = () => {
           <div className={classes.checkoutContent}>
             <div className={classes.total}>
               <h1>sub-total</h1>
-              <p>{cart.totalAmount} items</p>
+              <p>{cartContext.totalAmount} items</p>
             </div>
-            <h1>${cart.totalPrice}</h1>
+            <h1>${cartContext.totalPrice}</h1>
           </div>
           <div className={classes.checkoutButtons}>
             <Button href="" onClick={onClickCancelHandler}>

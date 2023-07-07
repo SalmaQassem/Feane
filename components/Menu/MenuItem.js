@@ -1,13 +1,13 @@
 import classes from "../../styles/_menuItem.module.scss";
 import Image from "next/image";
 import AddButton from "../UI/AddButton";
-import { useCallback } from "react";
-import { useDispatch } from "react-redux";
-import { cartActions } from "../../store/cartSlice";
+import { useCallback, useContext } from "react";
+import CartContext from "../../context/cartContext/cartContext";
 import { FaShoppingCart } from "react-icons/fa";
 
 const MenuItem = (props) => {
-  const dispatch = useDispatch();
+  const cartContext = useContext(CartContext);
+
   const onFormSubmitHandler = useCallback(
     (e) => {
       e.preventDefault();
@@ -21,10 +21,10 @@ const MenuItem = (props) => {
           name: item.name,
           price: item.price,
         };
-        dispatch(cartActions.addItems(selectedItem));
+        cartContext.addItem(selectedItem);
       }
     },
-    [props, dispatch]
+    [props, cartContext]
   );
 
   return (

@@ -1,23 +1,22 @@
 import classes from "../../styles/_cartItem.module.scss";
-import { useCallback } from "react";
-import { cartActions } from "../../store/cartSlice";
-import { useDispatch } from "react-redux";
+import { useCallback, useContext } from "react";
+import CartContext from "@/context/cartContext/cartContext";
 import QuantityButton from "../UI/QuantityButton";
 import RemoveButton from "../UI/RemoveButton";
 
 const CartItem = (props) => {
-  const dispatch = useDispatch();
+  const cartContext = useContext(CartContext);
   const increaseHandler = useCallback(() => {
-    dispatch(cartActions.addItems(props.data));
-  }, [dispatch, props]);
+    cartContext.addItem(props.data);
+  }, [props, cartContext]);
 
   const onClickDecrease = useCallback(() => {
-    dispatch(cartActions.decreaseItems(props.data));
-  }, [dispatch, props]);
+    cartContext.decreaseItem(props.data);
+  }, [props]);
 
   const onClickRemoveHandler = useCallback(() => {
-    dispatch(cartActions.removeItems(props.data));
-  }, [dispatch, props]);
+    cartContext.removeItem(props.data);
+  }, [props]);
 
   return (
     <div className={classes.cartItem}>

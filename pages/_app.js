@@ -1,18 +1,18 @@
 import "../styles/_global-styles.scss";
-import Providers from "../store/Provider";
+import CartProvider from "@/context/cartContext/cartProvider";
 import HomeLayout from "../components/Layout/HomeLayout";
-import RootLayout from "@/components/Layout/RootLayout";
+import RootLayout from "../components/Layout/RootLayout";
 import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const Root = router.route === "/" ? HomeLayout : RootLayout;
   return (
-    <Providers>
+    <CartProvider>
       <Root>
         <Component {...pageProps} />
       </Root>
-    </Providers>
+    </CartProvider>
   );
 }
 

@@ -1,6 +1,6 @@
 import classes from "../../styles/_sideList.module.scss";
-import { cartActions } from "../../store/cartSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useContext } from "react";
+import CartContext from "@/context/cartContext/cartContext";
 import Link from "next/link";
 import { FaUser, FaShoppingCart, FaSearch } from "react-icons/fa";
 import Button from "../UI/Button";
@@ -12,7 +12,7 @@ const sideLinks = [
     label: "Profile Page",
   },
   {
-    url: "",
+    url: "/",
     class: classes.cart,
     icon: <FaShoppingCart />,
     label: "Cart Page",
@@ -24,14 +24,14 @@ const sideLinks = [
   },
 ];
 const SideList = (props) => {
-  const dispatch = useDispatch();
-  const amount = useSelector((state) => state.cart.totalAmount);
+  const cartContext = useContext(CartContext);
 
   const linkClickHandler = () => {
     props.linkHandler();
   };
-  const onCartClickHandler = () => {
-    dispatch(cartActions.setIsCartOpenedHandler(true));
+  const onCartClickHandler = (e) => {
+    e.preventDefault();
+    cartContext.setIsCartOpened(true);
   };
 
   return (
@@ -42,7 +42,9 @@ const SideList = (props) => {
             <li
               key={link.label}
               className={link.class && link.class}
-              data-before={link.class === classes.cart && amount}
+              data-before={
+                link.class === classes.cart && cartContext.totalAmount
+              }
             >
               <Link
                 href={link.url}
