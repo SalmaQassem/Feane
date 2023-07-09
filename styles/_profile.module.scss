@@ -48,13 +48,18 @@
     }
 
     &.opened {
-        height: fit-content;
-        padding: 15px;
-        overflow: visible;
-        opacity: 1;
 
         >.button {
             height: 35px;
+        }
+
+        @include mediaQuery($largeScreen_min_width) {
+            & {
+                height: fit-content;
+                overflow: visible;
+                padding: 15px;
+                opacity: 1;
+            }
         }
 
         @include mediaQuery($XlargeScreen_min_width) {

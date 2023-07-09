@@ -8,7 +8,7 @@ import Profile from "../Profile";
 import Button from "../UI/Button";
 const sideLinks = [
   {
-    url: "/",
+    url: "Login",
     class: classes.profile,
     icon: <FaUser />,
     label: "Profile Page",

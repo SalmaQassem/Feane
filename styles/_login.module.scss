@@ -35,11 +35,23 @@
 }
 
 .loginContainer {
-    width: 50%;
+    width: 90%;
     padding: 40px 0;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+
+    @include mediaQuery($medScreen_min_width) {
+        & {
+            width: 70%;
+        }
+    }
+
+    @include mediaQuery($largeScreen_min_width) {
+        & {
+            width: 50%;
+        }
+    }
 
     @include mediaQuery($XlargeScreen_min_width) {
         & {
