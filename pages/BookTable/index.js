@@ -3,7 +3,7 @@ import Head from "next/head";
 import StyledContainer from "../../components/UI/StyledContainer";
 import Overlay from "../../components/UI/Overlay";
 import Header from "../../components/UI/Header";
-import BookButton from "../../components/UI/MainButton";
+import MainButton from "../../components/UI/MainButton";
 import useInput from "../../hooks/useInput";
 import { useState, useCallback } from "react";
 import { FiCheck } from "react-icons/fi";
@@ -278,9 +278,9 @@ const BookTable = () => {
                   <p className={classes.feedback}>Date must be selected</p>
                 )}
               </div>
-              <BookButton aria-label="book">
+              <MainButton aria-label="book">
                 {isSubmitting === true ? "submitting..." : "book now"}
-              </BookButton>
+              </MainButton>
             </form>
             <div className={classes.map}>
               <Map />

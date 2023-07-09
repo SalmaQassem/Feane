@@ -70,9 +70,9 @@
             height: 145px;
             transition: 0.2s;
 
-            @include mediaQuery($XlargeScreen_min_width) {
+            @include mediaQuery($XXlargeScreen_min_width) {
                 & {
-                    height: 15vh;
+                    height: 15.85vh;
                 }
             }
 

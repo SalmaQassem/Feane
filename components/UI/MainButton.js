@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const BookButton = styled.button`
+const MainButton = styled.button`
   padding: 0.625em 3.4375rem;
   margin-top: 15px;
   display: inline-block;
@@ -24,7 +24,7 @@ const BookButton = styled.button`
     & {
       padding: 0.75rem 4.125rem;
       margn-top: 1.78125;
-      font-size: 1.125rem;
+      font-size: 1.12rem;
       border-radius: 4.5vh;
     }
   }
@@ -36,4 +36,4 @@ const BookButton = styled.button`
   }
 `;
 
-export default BookButton;
+export default MainButton;

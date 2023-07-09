@@ -1,0 +1,108 @@
+@use "./variables/colors" as *;
+@use "./variables/mediaQuery" as *;
+@use "../helpers/flex_row_mixin" as *;
+@use "../helpers/mediaQuery_mixin" as *;
+
+.profile {
+    width: 245px;
+    height: 0;
+    @include flex_row;
+    gap: 15px;
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.15s;
+
+    @include mediaQuery($XlargeScreen_min_width) {
+        & {
+            border-radius: 1.5vh;
+        }
+    }
+
+    @include mediaQuery($XXlargeScreen_min_width) {
+        & {
+            width: 16.1vw;
+            top: 4.4vh;
+            gap: 1.05vw;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        transform: translateY(-100%);
+        border: 10px solid;
+        border-color: transparent transparent #fff transparent;
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                border-width: 1.1vh;
+            }
+        }
+    }
+
+    &.opened {
+        height: fit-content;
+        padding: 15px;
+        overflow: visible;
+        opacity: 1;
+
+        >.button {
+            height: 35px;
+        }
+
+        @include mediaQuery($XlargeScreen_min_width) {
+            & {
+                padding: 1.125rem;
+            }
+        }
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                padding: 2.0625vh;
+
+                >.button {
+                    height: 3.83vh;
+                }
+            }
+        }
+    }
+
+    .button {
+        width: 100px;
+        height: 0;
+        padding: 8px 15px;
+        @include flex_row;
+        background-color: $MainColor;
+        color: #fff;
+        font-size: 15px;
+        border-radius: 45px;
+        text-transform: capitalize;
+
+        @include mediaQuery($XlargeScreen_min_width) {
+            & {
+                padding: 0.6rem 1.125rem;
+                font-size: 1.05rem;
+                border-radius: 4.5vh;
+            }
+        }
+
+        @include mediaQuery($XXlargeScreen_min_width) {
+            & {
+                width: 6.6vw;
+                padding: 1.1vh 1.05vw;
+                font-size: 1.03125vw;
+            }
+        }
+
+        &:hover {
+            background-color: $HoverColor;
+        }
+    }
+}

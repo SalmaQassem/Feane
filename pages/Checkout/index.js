@@ -2,7 +2,7 @@ import classes from "../../styles/_checkout.module.scss";
 import { useState } from "react";
 import StyledContainer from "../../components/UI/StyledContainer";
 import StepsBar from "../../components/Checkout/StepsBar";
-import BookButton from "../../components/UI/MainButton";
+import MainButton from "../../components/UI/MainButton";
 import Coupon from "../../components/Checkout/Coupon";
 import Shipping from "../../components/Checkout/Shipping";
 import PersonalDetails from "../../components/Checkout/PersonalDetails";
@@ -41,13 +41,13 @@ const Checkout = () => {
               <Prices />
             </div>
           </div>
-          <BookButton
+          <MainButton
             className={classes.submit}
             type="button"
             onClick={steps < 4 ? clickNextHandler : submitFormHandler}
           >
             {steps < 4 ? "next step" : "confirm"}
-          </BookButton>
+          </MainButton>
         </form>
       </StyledContainer>
     </section>
