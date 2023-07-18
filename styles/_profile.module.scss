@@ -47,6 +47,10 @@
         }
     }
 
+    &.info {
+        flex-direction: column;
+    }
+
     &.opened {
 
         >.button {
