@@ -80,7 +80,7 @@ const Login = () => {
       </section>
     );
   } else {
-    return <p>already logged in</p>;
+    return <p>logged in</p>;
   }
 };
 

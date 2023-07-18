@@ -25,7 +25,6 @@ export default NextAuth({
             } else {
               console.log("incorrect password");
             }
-            console.log("email not found");
             return null;
           }
         } catch (error) {
@@ -34,6 +33,7 @@ export default NextAuth({
       },
     }),
   ],
+  secret: process.env.NEXT_PUBLIC_SECRET,
   session: {
     strategy: "jwt",
   },
