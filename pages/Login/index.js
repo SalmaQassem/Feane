@@ -4,7 +4,7 @@ import { FaUser, FaUnlockAlt } from "react-icons/fa";
 import Link from "next/link";
 import MainButton from "@/components/UI/MainButton";
 import { useState } from "react";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 const Login = () => {
   const [email, setEmail] = useState("");
