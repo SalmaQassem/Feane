@@ -1,4 +1,4 @@
-import classes from "../../styles/_login.module.scss";
+import classes from "../../styles/_auth.module.scss";
 import StyledContainer from "@/components/UI/StyledContainer";
 import { FaUser, FaUnlockAlt } from "react-icons/fa";
 import Link from "next/link";
@@ -71,9 +71,9 @@ const Login = () => {
                 <Link href="/">forget password?</Link>
               </div>
             </form>
-            <div className={classes.signup}>
+            <div className={classes.log}>
               <p>Don't have an account?</p>
-              <Link href="/">sign up</Link>
+              <Link href="SignUp">sign up</Link>
             </div>
           </div>
         </StyledContainer>

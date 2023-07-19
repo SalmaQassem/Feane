@@ -14,7 +14,7 @@ const Profile = (props) => {
         <Link href="Login" className={classes.button}>
           login
         </Link>
-        <Link href="" className={classes.button}>
+        <Link href="SignUp" className={classes.button}>
           signUp
         </Link>
       </div>

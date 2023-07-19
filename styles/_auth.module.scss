@@ -169,6 +169,11 @@
                     }
                 }
             }
+
+            .error {
+                color: red;
+                transform: translateY(-10px);
+            }
         }
 
         .submit {
@@ -202,7 +207,7 @@
         }
     }
 
-    .signup {
+    .log {
         margin-top: 30px;
         display: flex;
         justify-content: center;
